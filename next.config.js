@@ -1,7 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+const withReactSvg = require('next-react-svg');
+const path = require('path');
 
-module.exports = nextConfig
+module.exports = withReactSvg({
+  swcMinify: true,
+  reactStrictMode: true,
+  typescript: {
+    ignoreBuildErrors: false
+  },
+  output: {
+    globalObject: 'this'
+  },
+  include: path.resolve(__dirname, 'src/assets')
+})
