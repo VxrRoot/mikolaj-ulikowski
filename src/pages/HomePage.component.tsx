@@ -7,7 +7,7 @@ import MainTemplate from '../components/templates/MainTemplate.template';
 import SvgLogo from '../assets/logo_peach.svg';
 
 // Styled Components
-import {StyledWrapper, StyledHeader, LogoWrapper, StyledNav, StyledMobileMenu} from './HomePage.styles';
+import {StyledWrapper, StyledHeader, LogoWrapper, StyledNav, StyledMobileMenu, InnerWrapper} from './HomePage.styles';
 
 const HomePage: FC = () => {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -19,12 +19,12 @@ const HomePage: FC = () => {
 	return (
 		<StyledWrapper>
 			<MainTemplate>
-				<>
-					{
-						<StyledMobileMenu isActive={showMobileMenu}>
-							Mobile menu
-						</StyledMobileMenu>
-					}
+				<InnerWrapper>
+					
+					<StyledMobileMenu isActive={showMobileMenu}>
+						Mobile menu
+					</StyledMobileMenu>
+					
 					<StyledHeader>
 						<LogoWrapper>
 							<SvgLogo />
@@ -38,7 +38,7 @@ const HomePage: FC = () => {
 							</div>
 						</StyledNav>
 					</StyledHeader>
-				</>
+				</InnerWrapper>
 			</MainTemplate>
 		</StyledWrapper>
 	);

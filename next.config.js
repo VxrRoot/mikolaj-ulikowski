@@ -11,5 +11,11 @@ module.exports = withReactSvg({
   output: {
     globalObject: 'this'
   },
-  include: path.resolve(__dirname, 'src/assets')
+  include: path.resolve(__dirname, 'src/assets'),
+  compiler: {
+    styledComponents: true | {
+      ssr: true,
+      cssProp: true,
+    }
+  }
 })

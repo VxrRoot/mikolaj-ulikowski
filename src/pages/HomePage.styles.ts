@@ -38,14 +38,19 @@ const animationBurger3 = keyframes`
 `
 
 export const StyledWrapper = styled.div`
-	width: 100%;
+	
 	min-height: 100vh;
 	background-color: #333;
 	padding: 8px;
 	
+	
 	@media(min-width: 1024px) {
 		padding: 20px;
 	}
+`
+
+export const InnerWrapper = styled.div`
+	overflow-y: hidden;
 `
 
 export const StyledHeader = styled.header`
@@ -114,7 +119,6 @@ export const StyledNav = styled.nav`
 `;
 
 export const StyledMobileMenu = styled.div<IStyledMobileMenu>`
-	display: flex;
 	position: absolute;
 	left: ${({isActive}) => isActive ? '0' : '100%'};
 	top: 0;
@@ -122,10 +126,6 @@ export const StyledMobileMenu = styled.div<IStyledMobileMenu>`
 	width: 100%;
 	height: 100%;
 	background-color: white;
-	
-	@media(min-width: 1024px) {
-		display: none;
-	}
 `;
 
 export const LogoWrapper = styled.div`

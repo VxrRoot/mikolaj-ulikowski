@@ -8,6 +8,7 @@ interface IMainTemplate {
 const Wrapper = styled.div`
 	max-width: 1200px;
 	margin: 0 auto;
+	overflow: hidden !important;
 `;
 
 const MainTemplate: FC<IMainTemplate> = ({children}) => {
