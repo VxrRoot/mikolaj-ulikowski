@@ -31,6 +31,7 @@ class MyDocument extends Document {
       return (
          <Html lang="pl">
             <Head>
+               <title>Mikolaj</title>
                <meta name="application-name" content={process.env.NEXT_PUBLIC_SITE_URL} />
                <meta name="apple-mobile-web-app-capable" content="yes" />
                <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -51,6 +52,9 @@ class MyDocument extends Document {
                <link rel="shortcut icon" href="/static/icons/favicon.ico" />
                <link rel="stylesheet" href="https://use.typekit.net/syj1pvy.css" />
                <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;700&display=swap" rel="stylesheet"/>
+               <link rel="preconnect" href="https://fonts.googleapis.com" />
+               <link rel="preconnect" href="https://fonts.gstatic.com" />
+               <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
             </Head>
             <body>
                <Main />

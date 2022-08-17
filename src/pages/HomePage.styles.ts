@@ -1,12 +1,8 @@
 import styled, {keyframes} from 'styled-components';
 
-interface IStyledMobileMenu {
-	isActive: boolean;
-}
-
 const animationBurger1 = keyframes`
 	from {
-		background-color: black;
+		background-color: white;
 	}
 	to {
 		background-color: transparent;
@@ -38,31 +34,30 @@ const animationBurger3 = keyframes`
 `
 
 export const StyledWrapper = styled.div`
-	
-	min-height: 100vh;
-	background-color: #333;
-	padding: 8px;
-	
-	
-	@media(min-width: 1024px) {
-		padding: 20px;
-	}
+	position: relative;
+	background: rgb(53,45,42);
+	background: linear-gradient(0deg, rgba(53,45,42,1) 0%, rgba(131,125,125,1) 54%);
 `
 
 export const InnerWrapper = styled.div`
-	overflow-y: hidden;
+	padding: 8px 8px 0 8px;
+
+	@media(min-width: 1024px) {
+		padding: 20px 20px 0 20px;
+	}
 `
 
 export const StyledHeader = styled.header`
 	display: flex;
+	width: 100%;
 `
 
-export const StyledNav = styled.nav`
+export const StyledBurger = styled.div`
 	position: relative;
 	width: 100%;
-	height: 100px;
 	
 	.burger_wr {
+		z-index: 10;
 		display: flex;
 		position: absolute;
 		cursor: pointer;
@@ -101,12 +96,10 @@ export const StyledNav = styled.nav`
 				animation: ${animationBurger1} .2s forwards;
 				
 				&:before {
-					background-color: black;
 					animation: ${animationBurger2} .5s .2s forwards;
 				}
 				
 				&:after {
-					background-color: black;
 					animation: ${animationBurger3} .5s .2s forwards;
 				}
 			}
@@ -118,26 +111,17 @@ export const StyledNav = styled.nav`
 	}
 `;
 
-export const StyledMobileMenu = styled.div<IStyledMobileMenu>`
-	position: absolute;
-	left: ${({isActive}) => isActive ? '0' : '100%'};
-	top: 0;
-	transition: .3s;
-	width: 100%;
-	height: 100%;
-	background-color: white;
-`;
-
 export const LogoWrapper = styled.div`
+	margin-top: 6px;
+	cursor: pointer;
+	
 	svg {
 		width: auto;
 		height: 40px;
+		fill: #f6ae85;
 	}
 
 	@media(min-width: 1024px) {
-		svg {
-			width: 200px;
-			height: auto;
-		}
+		margin-top: 0;
 	}
-`
+`;
