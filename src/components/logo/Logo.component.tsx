@@ -2,7 +2,7 @@ import { FC, Fragment } from 'react';
 
 import styled from 'styled-components';
 
-import SvgLogo from '../../assets/logo_peach.svg';
+import SvgLogo from '../../assets/logo.svg';
 
 export const Wrapper = styled.div`
    width: 100%;

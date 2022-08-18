@@ -1,19 +1,26 @@
 import {FC} from 'react';
 import styled from 'styled-components';
 
+// Components
+import Header from '../elements/header/Header.component';
+import Footer from '../elements/footer/Footer.component';
+
 interface IMainTemplate {
-	children: JSX.Element;
+	children: JSX.Element | JSX.Element[];
 }
 
 const Wrapper = styled.div`
-	max-width: 1200px;
-	margin: 0 auto;
+	position: relative;
 `;
 
 const MainTemplate: FC<IMainTemplate> = ({children}) => {
 	return (
 		<Wrapper>
-			{children}
+			<Header />
+			<main>
+				{children}
+			</main>
+			<Footer />
 		</Wrapper>
 	);
 };

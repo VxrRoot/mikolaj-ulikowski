@@ -6,6 +6,7 @@ export const theme: DefaultTheme = {
 	colorWhite: '#FFFFFF',
 	colorGradientDark: '#352d2a',
 	colorGradientLight: '#837d7d',
+	colorBackgroundFooter: '#f2f2f2',
 	fontFamilyMontsserrat: `'Montserrat', sans-serif`,
 	fontFamilyOpenSans: `'Open Sans', sans-serif`,
 	fontWeightLight: '300',

@@ -1,7 +1,7 @@
 import {FC} from 'react';
 
 // Data
-import {NavItems} from '../Navigation.data';
+import {navItems} from '../Navigation.data';
 
 // Styled Components
 import {StyledNavigation} from './DesktopNav.styles';
@@ -11,7 +11,7 @@ const DesktopNav: FC = () => {
 		<StyledNavigation>
 			<ul>
 				{
-					NavItems.map((item, idx) => (
+					navItems.map((item, idx) => (
 						<li key={idx}>
 							<span>
 								{item}

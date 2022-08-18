@@ -4,19 +4,20 @@ import Image from 'next/image';
 // Assets
 import PersonPng from '../../../assets/person.png';
 import SvgBottom from '../../../assets/bottom_slide.svg'
+import SvgWave from '../../../assets/wave.svg';
 
 // Styled Components
-import {StyledImageWrapper, Wrapper, StyledContentWrapper, StyledCircle, StyledBottomSection} from './HeroSection.styles';
+import {StyledImageWrapper, Wrapper, StyledContentWrapper, StyledCircle, StyledBottomSection, OuterWrapper} from './HeroSection.styles';
 
 // Components
 import Button from '../../elements/button/Button.component';
 import Circle from '../../elements/circle/Circle.component';
-import MainTemplate from '../../templates/MainTemplate';
+import RowTemplate from '../../templates/RowTemplate';
 
 const HeroSection: FC = () => {
 	return (
-		<Fragment>
-			<MainTemplate>
+		<OuterWrapper>
+			<RowTemplate>
 				<Wrapper>
 					<StyledContentWrapper>
 						<h1>
@@ -40,11 +41,11 @@ const HeroSection: FC = () => {
 						<Circle />
 					</StyledCircle>
 				</Wrapper>
-			</MainTemplate>
+			</RowTemplate>
 			<StyledBottomSection>
-				<SvgBottom />
+				<SvgWave />
 			</StyledBottomSection>
-		</Fragment>
+		</OuterWrapper>
 
 
 	);

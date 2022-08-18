@@ -1,10 +1,10 @@
 import {FC} from 'react';
 
 // Assets
-import SvgLogo from '../../../assets/logo_peach.svg';
+import SvgLogo from '../../../assets/logo.svg';
 
 // Data
-import {NavItems} from '../Navigation.data';
+import {navItems} from '../Navigation.data';
 
 // Styled Components
 import {StyledMobileMenu, StyledLogoWrapper, StyledNav} from './MobileNav.styles';
@@ -20,7 +20,7 @@ const MobileNav: FC<ModelMobileNav> = ({isOpen}) => {
 			</StyledLogoWrapper>
 			<StyledNav>
 				<ul>
-					{NavItems.map((item, idx) => (
+					{navItems.map((item, idx) => (
 						<li
 							key={idx}
 						>
