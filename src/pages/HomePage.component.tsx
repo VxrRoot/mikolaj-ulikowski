@@ -2,7 +2,7 @@ import React, {FC, useState} from 'react';
 import Image from 'next/image';
 
 // Templates
-import MainTemplate from '../components/templates/MainTemplate.template';
+import MainTemplate from '../components/templates/MainTemplate';
 
 // Svg
 import SvgLogo from '../assets/logo_peach.svg';

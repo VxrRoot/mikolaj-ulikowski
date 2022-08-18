@@ -11,7 +11,7 @@ import {StyledImageWrapper, Wrapper, StyledContentWrapper, StyledCircle, StyledB
 // Components
 import Button from '../../elements/button/Button.component';
 import Circle from '../../elements/circle/Circle.component';
-import MainTemplate from '../../templates/MainTemplate.template';
+import MainTemplate from '../../templates/MainTemplate';
 
 const HeroSection: FC = () => {
 	return (
