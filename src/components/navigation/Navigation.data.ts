@@ -1,4 +1,4 @@
-export const NavItems = [
+export const navItems = [
 	'Home',
 	'Oferta',
 	'Opinie',

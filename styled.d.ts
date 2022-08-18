@@ -8,6 +8,7 @@ declare module 'styled-components' {
 		colorWhite: string,
 		fontFamilyMontsserrat: string,
 		fontFamilyOpenSans: string,
+		colorBackgroundFooter: string,
 		colorGradientDark: string,
 		colorGradientLight: string,
 		fontWeightLight: string,

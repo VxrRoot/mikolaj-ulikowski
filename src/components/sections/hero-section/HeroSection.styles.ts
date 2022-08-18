@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.section`
+export const OuterWrapper = styled.section`
+	padding-top: 64px;
+	position: relative;
+	background: rgb(53,45,42);
+	background: linear-gradient(0deg, rgba(53,45,42,1) 0%, rgba(131,125,125,1) 54%);
+	padding-bottom: 10px;
+`;
+
+export const Wrapper = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -24,8 +32,9 @@ export const StyledContentWrapper = styled.div`
 	}
 	
 	.space {
-		height: 2px;
-		width: 20px;
+		display: block;
+		height: 4px;
+		width: 60px;
 		background-color: ${({theme}) => theme.colorPeach};
 	}
 	
@@ -101,23 +110,11 @@ export const StyledCircle = styled.div`
 export const StyledBottomSection = styled.div`
 	width: 100%;
 	position: absolute;
-	bottom: -30px;
+	bottom: -5px;
 	left: 0;
 	
 	svg {
 		width: 100%;
 		fill: white;
-	}
-
-	@media(min-width: 1024px) {
-		bottom: -100px;
-	}
-
-	@media(min-width: 1400px) {
-		bottom: -150px;
-	}
-
-	@media(min-width: 1600px) {
-		bottom: -200px;
 	}
 `
