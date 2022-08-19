@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 // Assets
 import PersonPng from '../../../assets/person.png';
-import SvgBottom from '../../../assets/bottom_slide.svg'
 import SvgWave from '../../../assets/wave.svg';
 
 // Styled Components

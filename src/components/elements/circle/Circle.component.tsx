@@ -5,7 +5,7 @@ const StyledCircle = styled.div`
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-	background-color: rgb(246, 174, 133, 0.5);
+	background-color: rgb(246, 174, 133, 0.3);
 `
 
 const Circle: FC = () => {

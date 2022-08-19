@@ -117,4 +117,4 @@ export const StyledBottomSection = styled.div`
 		width: 100%;
 		fill: white;
 	}
-`
+`;
