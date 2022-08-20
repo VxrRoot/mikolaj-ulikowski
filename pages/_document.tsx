@@ -1,6 +1,5 @@
 import Document, {Html, Head, Main, NextScript, DocumentContext} from 'next/document'
 import {ServerStyleSheet} from 'styled-components';
-import Script from 'next/script';
 
 class MyDocument extends Document {
    static async getInitialProps(ctx: DocumentContext) {
@@ -30,9 +29,8 @@ class MyDocument extends Document {
    }
    render () {
       return (
-         <Html lang="pl">
+         <Html lang="en">
             <Head>
-               <title>Mikolaj</title>
                <meta name="application-name" content={process.env.NEXT_PUBLIC_SITE_URL} />
                <meta name="apple-mobile-web-app-capable" content="yes" />
                <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -44,6 +42,8 @@ class MyDocument extends Document {
                <meta name="robots" content="noodp" />
                <meta name="copyright" content={process.env.NEXT_PUBLIC_SITE_URL} />
                <meta name="author" content={process.env.NEXT_PUBLIC_SITE_URL} />
+               <meta name="viewport" content="width=device-width, initial-scale=1" />
+               <meta httpEquiv="Content-Type" content="text/html; charset=uft-8" />
                <meta property="og:site_name" content={process.env.NEXT_PUBLIC_APP_NAME} />
                <link rel="apple-touch-icon" sizes="120x120" href="/static/icons/apple-touch-icon-120x120.png" />
                <link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon-180x180.png" />
