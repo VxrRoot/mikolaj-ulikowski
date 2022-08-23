@@ -26,6 +26,7 @@ export const StyledNavigation = styled.nav`
 					position: relative;
 					cursor: pointer;
 					overflow-y: hidden;
+					color: white;
 
 					&:before {
 						content: "";
