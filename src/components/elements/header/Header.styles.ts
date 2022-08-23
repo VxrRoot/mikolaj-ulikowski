@@ -58,7 +58,7 @@ export const LogoWrapper = styled.div`
 	svg {
 		width: auto;
 		height: 40px;
-		fill: #f6ae85;
+		fill: white;
 	}
 
 	@media(min-width: 1024px) {

@@ -4,6 +4,7 @@ import 'styled-components';
 declare module 'styled-components' {
 	export interface DefaultTheme {
 		colorPeach: string,
+		darkPeach: string,
 		colorBlack: string,
 		colorWhite: string,
 		fontFamilyMontsserrat: string,
