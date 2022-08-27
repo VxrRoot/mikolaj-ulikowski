@@ -13,9 +13,9 @@ const DesktopNav: FC = () => {
 				{
 					navItems.map((item, idx) => (
 						<li key={idx}>
-							<span>
-								{item}
-							</span>
+							<a href={item.href}>
+								{item.name}
+							</a>
 						</li>
 					))
 				}

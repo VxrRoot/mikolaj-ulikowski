@@ -25,15 +25,17 @@ const HeroSection: FC = () => {
 		timeLine.current = gsap.timeline();
 		
 		timeLine.current
+			.set([headline.current, buttonRef.current],
+				{autoAlpha:0})
 			.fromTo(headline.current,
-				{y: 100, autoAlpha: 0, ease: Power3.easeOut, duration: 2},
-				{y: 0, autoAlpha: 1})
+				{y: -100, autoAlpha: 0, ease: Power3.easeOut},
+				{y: 0, autoAlpha: 1, duration: .8})
 			.fromTo(buttonRef.current,
-				{y: 100, autoAlpha: 0, ease: Power3.easeOut, duration: .5},
-				{y: 0, autoAlpha: 1})
+				{y: 100, autoAlpha: 0,},
+				{y: 0, autoAlpha: 1, duration: .4})
 			.fromTo(subtitle.current,
-				{x: -200, autoAlpha: 0, duration: 2, delay: .5},
-				{x: 0, autoAlpha: 1})
+				{x: -200, autoAlpha: 0, ease: Power3.easeInOut},
+				{x: 0, autoAlpha: 1, duration: 1})
 		
 		return () => timeLine.current.kill();
 	}, [timeLine])

@@ -24,9 +24,9 @@ const MobileNav: FC<ModelMobileNav> = ({isOpen}) => {
 						<li
 							key={idx}
 						>
-							<span>
-								{item}
-							</span>
+							<a href={item.href}>
+								{item.name}
+							</a>
 						</li>
 					))}
 				</ul>

@@ -39,7 +39,7 @@ const Footer: FC = () => {
 											<li
 												key={idx}
 											>
-												{item}
+												{item.name}
 											</li>
 										))
 									}
