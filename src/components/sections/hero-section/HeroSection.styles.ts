@@ -5,7 +5,7 @@ export const OuterWrapper = styled.section`
 	position: relative;
 	//background: rgb(53,45,42);
 	//background: linear-gradient(0deg, rgba(53,45,42,1) 0%, rgba(131,125,125,1) 54%);
-	background-color: black;
+	background-color: #3D3938;
 	padding-bottom: 10px;
 	
 	@media(min-width: 1024px) {
@@ -115,14 +115,15 @@ export const StyledImageWrapper = styled.div`
 	width: 70%;
 	max-width: 300px;
 	margin-left: auto;
-	margin-top: 30px;
+	//margin-top: -50px;
 
 	@media(min-width: 700px) {
+		margin-top: -50px;
 		width: 50%;
 	}
 
 	@media(min-width: 1024px) {
-		margin: -40px 0 0 auto;
+		margin: -100px 0 0 auto;
 		max-width: 400px;
 		width: 100%;
 	}

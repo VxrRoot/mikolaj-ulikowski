@@ -8,6 +8,10 @@ export const OuterWrapper = styled.section`
 
 export const Wrapper = styled.div`
 	margin-bottom: 50px;
+	
+	@media(min-width: 1024px) {
+		margin-bottom: 150px;
+	}
 `;
 
 export const StyledBottomSection = styled.div`
@@ -31,7 +35,7 @@ export const StyledSpecializationsWrapper = styled.div`
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		gap: 20px;
+		gap: 40px;
 	}
 	
 	
@@ -39,6 +43,23 @@ export const StyledSpecializationsWrapper = styled.div`
 		
 		.items_wr {
 			flex-direction: row;
+			gap: 60px;
 		}
+	}
+`;
+
+export const StyledCircle = styled.div`
+	z-index: 1;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 48%;
+	left: -30px;
+	
+	@media(min-width: 1024px) {
+		width: 300px;
+		height: 300px;
+		left: -160px;
+		top: 40%;
 	}
 `;
