@@ -83,7 +83,6 @@ const Footer: FC = () => {
 									</a>
 								</Link>
 							</div>
-
 						</div>
 					</div>
 				</RowTemplate>

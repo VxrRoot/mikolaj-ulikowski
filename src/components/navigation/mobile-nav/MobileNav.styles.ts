@@ -60,7 +60,7 @@ export const StyledNav = styled.nav`
 			text-align: center;
 			color: ${({theme}) => theme.colorWhite};
 			
-			a {
+			span {
 				display: inline-block;
 				margin: auto;
 				position: relative;

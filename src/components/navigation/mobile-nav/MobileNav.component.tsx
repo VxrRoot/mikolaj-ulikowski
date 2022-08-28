@@ -3,16 +3,19 @@ import {FC} from 'react';
 // Assets
 import SvgLogo from '../../../assets/logo.svg';
 
-// Data
-import {navItems} from '../Navigation.data';
-
 // Styled Components
 import {StyledMobileMenu, StyledLogoWrapper, StyledNav} from './MobileNav.styles';
 
 // Models
 import {ModelMobileNav} from './MobileNav.model';
 
-const MobileNav: FC<ModelMobileNav> = ({isOpen}) => {
+const MobileNav: FC<ModelMobileNav> = ({isOpen, offerRef, showMenu}) => {
+	
+	const handleScrollToSection = () => {
+		offerRef.current?.scrollIntoView({behavior: 'smooth'});
+		showMenu();
+	}
+	
 	return (
 		<StyledMobileMenu isActive={isOpen}>
 			<StyledLogoWrapper>
@@ -20,15 +23,26 @@ const MobileNav: FC<ModelMobileNav> = ({isOpen}) => {
 			</StyledLogoWrapper>
 			<StyledNav>
 				<ul>
-					{navItems.map((item, idx) => (
-						<li
-							key={idx}
-						>
-							<a href={item.href}>
-								{item.name}
-							</a>
-						</li>
-					))}
+					<li>
+						<span onClick={handleScrollToSection}>
+							Home
+						</span>
+					</li>
+					<li>
+						<span onClick={handleScrollToSection}>
+							Oferta
+						</span>
+					</li>
+					<li>
+						<span onClick={handleScrollToSection}>
+							Opinie
+						</span>
+					</li>
+					<li>
+						<span onClick={handleScrollToSection}>
+							Kontakt
+						</span>
+					</li>
 				</ul>
 			</StyledNav>
 		</StyledMobileMenu>
