@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, MutableRefObject, useState} from 'react';
 
 // Assets
 import SvgLogo from '../../../assets/logo.svg';
@@ -11,7 +11,12 @@ import DesktopNav from '../../navigation/desktop-nav/DesktopNav.component';
 import MobileNav from '../../navigation/mobile-nav/MobileNav.component';
 import RowTemplate from '../../templates/RowTemplate';
 
-const Header: FC = () => {
+interface IHeader {
+	offerRef: MutableRefObject<HTMLDivElement>;
+	opinionRef: MutableRefObject<HTMLDivElement>;
+}
+
+const Header: FC<IHeader> = ({offerRef, opinionRef}) => {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 	
 	const showMenu = () => {
@@ -25,7 +30,10 @@ const Header: FC = () => {
 					<LogoWrapper>
 						<SvgLogo />
 					</LogoWrapper>
-					<DesktopNav />
+					<DesktopNav
+						offerRef={offerRef}
+						opinionRef={opinionRef}
+					/>
 					<StyledBurger>
 						<div
 							className="burger_wr"
@@ -34,7 +42,11 @@ const Header: FC = () => {
 							<div className={`burger ${showMobileMenu && 'isActive'}`} />
 						</div>
 					</StyledBurger>
-					<MobileNav isOpen={showMobileMenu} />
+					<MobileNav
+						isOpen={showMobileMenu}
+						offerRef={offerRef}
+						showMenu={showMenu}
+					/>
 				</StyledHeader>
 			</RowTemplate>
 		</Wrapper>

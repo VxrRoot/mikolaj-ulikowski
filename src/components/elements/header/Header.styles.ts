@@ -39,6 +39,11 @@ export const Wrapper = styled.div`
 	top: 0;
 	width: 100%;
 	z-index: 100;
+	padding-bottom: 8px;
+
+	@media(min-width: 1024px) {
+		padding-top: 12px;
+	}
 `;
 
 export const StyledHeader = styled.header`
@@ -47,7 +52,7 @@ export const StyledHeader = styled.header`
 	width: 100%;
 
 	@media(min-width: 1024px) {
-		padding-top: 20px;
+		padding-top: 8px;
 	}
 `
 

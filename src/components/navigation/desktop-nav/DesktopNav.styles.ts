@@ -18,7 +18,7 @@ export const StyledNavigation = styled.nav`
 				cursor: pointer;
 				height: 24px;
 
-				a {
+				span {
 					margin: auto;
 					height: 100%;
 					display: flex;

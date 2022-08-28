@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useRef} from 'react';
+import React, {FC, useEffect, useRef, forwardRef} from 'react';
 import Image from 'next/image';
 import gsap from "gsap";
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'

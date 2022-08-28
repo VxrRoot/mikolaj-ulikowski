@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, ForwardedRef, forwardRef} from 'react';
 
 // Assets
 import SvgWave from '../../../assets/wave.svg';
@@ -12,9 +12,10 @@ import SectionTitle from '../../elements/section-title/SectionTitle.component';
 import SingleSpecialization from './elements/single-specialization/SingleSpecialization.components';
 import Circle from '../../elements/circle/Circle.component';
 
-const SpecializationsSection: FC = () => {
+// eslint-disable-next-line react/display-name
+const SpecializationsSection = forwardRef((props, ref: ForwardedRef<HTMLDivElement> ) => {
 	return (
-		<OuterWrapper id="offer">
+		<OuterWrapper ref={ref}>
 			<RowTemplate>
 				<Wrapper>
 					<SectionTitle title="Obszary Specjalizacji" />
@@ -38,6 +39,6 @@ const SpecializationsSection: FC = () => {
 			</StyledBottomSection>
 		</OuterWrapper>
 	);
-};
+});
 
 export default SpecializationsSection;
