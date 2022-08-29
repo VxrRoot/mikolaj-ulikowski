@@ -15,6 +15,7 @@ import SectionTitle from '../../elements/section-title/SectionTitle.component';
 import RowTemplate from '../../templates/RowTemplate';
 import Circle from '../../elements/circle/Circle.component';
 
+// eslint-disable-next-line react/display-name
 const AboutMe = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const timeline = useRef<any>(null);
