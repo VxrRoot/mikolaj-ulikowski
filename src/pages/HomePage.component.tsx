@@ -13,17 +13,19 @@ const HomePage: FC = () => {
 	const heroSectionRef = useRef<HTMLDivElement>(null);
 	const specializationsSectionRef = useRef<HTMLDivElement>(null!);
 	const opinionSectionRef = useRef<HTMLDivElement>(null!);
+	const meetingRef = useRef<HTMLDivElement>(null!);
 	
 	return (
 		<MainTemplate
 			offerRef={specializationsSectionRef}
 			opinionRef={opinionSectionRef}
+			contactRef={meetingRef}
 		>
-			<HeroSection  />
+			<HeroSection meetingRef={meetingRef} />
 			<StatisticsSection />
 			<SpecializationsSection ref={specializationsSectionRef} />
 			<OpinionSection ref={opinionSectionRef} />
-			<AboutMe />
+			<AboutMe ref={meetingRef} />
 			<BookConsultation />
 		</MainTemplate>
 	);

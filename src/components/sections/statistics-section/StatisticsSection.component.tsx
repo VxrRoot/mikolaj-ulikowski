@@ -21,7 +21,7 @@ const StatisticsSection: FC = () => {
 	const {start: startClients} = useCountUp({
 		end: 9,
 		ref: 'clients_number',
-		duration: 1,
+		duration: 1.1,
 		startOnMount: false,
 		useEasing: true
 	});
@@ -29,7 +29,7 @@ const StatisticsSection: FC = () => {
 		end: 25.000,
 		ref: 'budget_number',
 		suffix: 'PLN',
-		duration: 1,
+		duration: 1.5,
 		startOnMount: false,
 		decimals: 3,
 		useEasing: true
@@ -38,7 +38,7 @@ const StatisticsSection: FC = () => {
 		end: 6.3,
 		start: 0.0,
 		ref: 'ROI_number',
-		duration: 1,
+		duration: 1.3,
 		startOnMount: false,
 		decimals: 1,
 		useEasing: true,

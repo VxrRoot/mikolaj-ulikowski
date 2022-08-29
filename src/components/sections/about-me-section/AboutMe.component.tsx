@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect, useRef, forwardRef, ForwardedRef} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {AiFillFacebook, AiFillInstagram, AiFillLinkedin} from 'react-icons/ai';
+import {gsap} from 'gsap';
 
 // Styled Components
 import {Wrapper, StyledSection, PhotoWr, AboutWr, StyledCircle} from './AboutMe.styles';
@@ -14,12 +15,28 @@ import SectionTitle from '../../elements/section-title/SectionTitle.component';
 import RowTemplate from '../../templates/RowTemplate';
 import Circle from '../../elements/circle/Circle.component';
 
-const AboutMe = () => {
+const AboutMe = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
+	const wrapperRef = useRef<HTMLDivElement>(null);
+	const timeline = useRef<any>(null);
+	
+	useEffect(() => {
+		timeline.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: wrapperRef.current,
+				start: 'top bottom'
+			}
+		})
+		
+		timeline.current.fromTo(wrapperRef.current,
+			{autoAlpha: 0, y: '+=100'},
+			{autoAlpha: 1, y: 0, duration: 1});
+	}, []);
+	
 	return (
-		<StyledSection>
+		<StyledSection ref={wrapperRef}>
 			<RowTemplate>
 				<SectionTitle title="Porozmawiajmy!" />
-				<Wrapper>
+				<Wrapper ref={ref}>
 					<PhotoWr>
 						<Image src={AvatarImg} layout="responsive" alt="Mikolaj_zdjecie" />
 					</PhotoWr>
@@ -62,6 +79,6 @@ const AboutMe = () => {
 			</StyledCircle>
 		</StyledSection>
 	);
-};
+}) 
 
 export default AboutMe;

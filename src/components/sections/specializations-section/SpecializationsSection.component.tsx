@@ -61,7 +61,7 @@ const SpecializationsSection = forwardRef((props, ref: ForwardedRef<HTMLDivEleme
 			{autoAlpha: 0, x: '-=100'},
 			{autoAlpha: 1, x: 0, stagger: 0.2, duration: 0.8})
 		
-		
+		return () => timeline.current.kill();
 	}, []);
 	
 	

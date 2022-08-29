@@ -97,6 +97,11 @@ export const ButtonsWr = styled.div`
 	.prev_btn {
 		transform: rotate(135deg);
 	}
+
+	.swiper-button-disabled {
+		opacity: .5;
+		cursor: auto;
+	}
 	
 	@media(min-width: 1024px) {
 		transform: translateX(0);

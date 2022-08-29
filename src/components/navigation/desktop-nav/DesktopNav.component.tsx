@@ -1,18 +1,20 @@
 import {FC, MutableRefObject} from 'react';
 
+// Hooks
+import UseScrollToSection from '../../../hooks/UseScrollToSection.hook';
+
 // Styled Components
 import {StyledNavigation} from './DesktopNav.styles';
 
 interface IDesktopNav {
 	offerRef: MutableRefObject<HTMLDivElement>;
 	opinionRef: MutableRefObject<HTMLDivElement>;
+	contactRef: MutableRefObject<HTMLDivElement>;
 }
 
-const DesktopNav: FC<IDesktopNav> = ({offerRef, opinionRef}) => {
-	
-	const handleScrollToSection = (refElement: MutableRefObject<HTMLDivElement> ) => {
-		refElement.current?.scrollIntoView({behavior: 'smooth'});
-	}
+const DesktopNav: FC<IDesktopNav> = ({offerRef, opinionRef, contactRef}) => {
+
+	const {handleScrollToSection} = UseScrollToSection();
 	
 	return (
 		<StyledNavigation>
@@ -33,7 +35,7 @@ const DesktopNav: FC<IDesktopNav> = ({offerRef, opinionRef}) => {
 					</span>
 				</li>
 				<li>
-					<span onClick={() => handleScrollToSection(offerRef)}>
+					<span onClick={() => handleScrollToSection(contactRef)}>
 						Kontakt
 					</span>
 				</li>

@@ -9,18 +9,20 @@ interface IMainTemplate {
 	children: JSX.Element | JSX.Element[];
 	offerRef: MutableRefObject<HTMLDivElement>;
 	opinionRef: MutableRefObject<HTMLDivElement>;
+	contactRef: MutableRefObject<HTMLDivElement>;
 }
 
 const Wrapper = styled.div`
 	position: relative;
 `;
 
-const MainTemplate: FC<IMainTemplate> = ({children, offerRef, opinionRef}) => {
+const MainTemplate: FC<IMainTemplate> = ({children, offerRef, opinionRef, contactRef}) => {
 	return (
 		<Wrapper>
 			<Header
 				offerRef={offerRef}
 				opinionRef={opinionRef}
+				contactRef={contactRef}
 			/>
 			<main>
 				{children}

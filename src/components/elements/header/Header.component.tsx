@@ -14,9 +14,10 @@ import RowTemplate from '../../templates/RowTemplate';
 interface IHeader {
 	offerRef: MutableRefObject<HTMLDivElement>;
 	opinionRef: MutableRefObject<HTMLDivElement>;
+	contactRef: MutableRefObject<HTMLDivElement>;
 }
 
-const Header: FC<IHeader> = ({offerRef, opinionRef}) => {
+const Header: FC<IHeader> = ({offerRef, opinionRef, contactRef}) => {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 	
 	const showMenu = () => {
@@ -33,6 +34,7 @@ const Header: FC<IHeader> = ({offerRef, opinionRef}) => {
 					<DesktopNav
 						offerRef={offerRef}
 						opinionRef={opinionRef}
+						contactRef={contactRef}
 					/>
 					<StyledBurger>
 						<div
@@ -45,6 +47,8 @@ const Header: FC<IHeader> = ({offerRef, opinionRef}) => {
 					<MobileNav
 						isOpen={showMobileMenu}
 						offerRef={offerRef}
+						opinionRef={opinionRef}
+						contactRef={contactRef}
 						showMenu={showMenu}
 					/>
 				</StyledHeader>

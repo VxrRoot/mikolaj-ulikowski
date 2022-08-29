@@ -87,6 +87,7 @@ export const StyledContentWrapper = styled.div`
 			font-size: 40px;
 			line-height: 50px;
 			padding-right: 0;
+			margin-right: 0;
 		}
 
 		.subtitle {

@@ -14,6 +14,6 @@ export default createGlobalStyle`
 		margin: 0;
 		padding: 0;
 		scroll-behavior: smooth;
-		background-color: rgb(61, 57, 56);
+		background-color: white;
 	}
 `

@@ -1,15 +1,16 @@
-import {ForwardedRef, forwardRef, useRef} from 'react';
+import {ForwardedRef, forwardRef, useRef, useEffect} from 'react';
 import Image from 'next/image';
+import gsap from 'gsap';
 
 // Swiper
 import {
 	Swiper,
-	SwiperSlide
+	SwiperSlide,
 } from 'swiper/react';
 import {
 	Navigation,
 	Pagination,
-	Autoplay
+	Autoplay,
 } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -28,22 +29,35 @@ import Circle from '../../elements/circle/Circle.component';
 
 // eslint-disable-next-line react/display-name
 const OpinionSection = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
-	const btnNext = useRef(null);
-	const btnPrev = useRef(null);
+	const timeline = useRef<any>(null);
+	const wrapperRef = useRef<any>(null);
+	
+	useEffect(() => {
+		timeline.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: wrapperRef.current,
+				start: 'top bottom'
+			}
+		})
+		
+		timeline.current.fromTo(wrapperRef.current,
+			{autoAlpha: 0, y: '+=100'},
+			{autoAlpha: 1, y: 0, duration: 1});
+	}, []);
 	
 	return (
 		<OuterWrapper ref={ref}>
 			<RowTemplate>
-				<Wrapper>
+				<Wrapper ref={wrapperRef}>
 					<SectionTitle title="Zobacz co mówią o nas klienci" />
 					<SliderWrapper>
 						<Swiper
 							className="swiper"
 							spaceBetween={100}
-							modules={[Navigation, Pagination, Autoplay]}
+							modules={[Navigation, Autoplay]}
 							navigation={{
-								prevEl: btnPrev.current,
-								nextEl: btnNext.current
+								prevEl: '.prev_btn',
+								nextEl: '.next_btn',
 							}}
 							autoplay={{
 								delay: 5000
@@ -84,14 +98,8 @@ const OpinionSection = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => 
 								</div>
 							</SwiperSlide>
 							<ButtonsWr>
-								<div
-									ref={btnPrev}
-									className="prev_btn"
-								/>
-								<div
-									ref={btnNext}
-									className="next_btn"
-								/>
+								<div className="prev_btn" />
+								<div className="next_btn" />
 							</ButtonsWr>
 						</Swiper>
 					</SliderWrapper>

@@ -1,16 +1,9 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-	z-index: 2;
-	background-color: white;
-	border-radius: 25px;
-	padding: 20px;
-	flex: 1 1 300px;
-`;
-
 export const StyledTitle = styled.div`
 	position: relative;
 	display: inline-block;
+	transition: .5s;
 	
 	h4 {
 		margin: 0;
@@ -19,7 +12,7 @@ export const StyledTitle = styled.div`
 		
 		&::before {
 			content: "";
-			background-color: ${({theme}) => theme.colorPeach};
+			background-color: ${({theme}) => theme.darkPeach};
 			width: 30%;
 			height: 4px;
 			position: absolute;
@@ -31,5 +24,26 @@ export const StyledTitle = styled.div`
 `;
 
 export const StyledParagraph = styled.p`
+	transition: .5s;
+`;
 
+export const Wrapper = styled.div`
+	z-index: 2;
+	background-color: white;
+	border-radius: 25px;
+	padding: 20px;
+	flex: 1 1 300px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #3D3938;
+	}
+
+	&:hover ${StyledParagraph} {
+		color: white;
+	}
+
+	&:hover ${StyledTitle} {
+		color: white;
+	}
 `;
