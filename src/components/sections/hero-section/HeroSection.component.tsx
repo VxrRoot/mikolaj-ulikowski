@@ -59,7 +59,7 @@ const HeroSection: FC = () => {
 						<StyledButton ref={buttonRef}>Umów się na rozmowę</StyledButton>
 					</StyledContentWrapper>
 					<StyledImageWrapper>
-						<Image src={PersonPng} alt="Owner" layout='responsive'/>
+						<Image src={PersonPng} alt="Owner" layout='responsive' priority={true}/>
 					</StyledImageWrapper>
 					<StyledCircle>
 						<Circle />

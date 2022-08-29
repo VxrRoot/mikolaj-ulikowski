@@ -66,7 +66,7 @@ export const Wrapper = styled.div`
 		grid-template-columns: 6fr 4fr;
 		grid-template-rows: 1fr;
 		grid-template-areas: 'phones numbers';
-		gap: 0;
+		gap: 20px;
 	}
 `;
 
@@ -88,6 +88,7 @@ export const StyledNumbersCounterWr = styled.article`
 		flex-direction: column;
 		align-items: center;
 		margin: 20px 0;
+		width: 300px;
 		
 		p {
 			margin: 0;

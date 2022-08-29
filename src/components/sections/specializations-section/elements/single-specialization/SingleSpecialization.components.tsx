@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {ForwardedRef, forwardRef} from 'react';
 
 // Styled Components
 import {Wrapper, StyledTitle, StyledParagraph} from './SingleSpecialization.styles';
@@ -8,9 +8,10 @@ interface ISingleSpecialization {
 	desc: string;
 }
 
-const SingleSpecialization: FC<ISingleSpecialization> = ({title, desc}) => {
+// eslint-disable-next-line react/display-name
+const SingleSpecialization = forwardRef(({title, desc}: ISingleSpecialization, ref: ForwardedRef<HTMLDivElement>) => {
 	return (
-		<Wrapper>
+		<Wrapper ref={ref}>
 			<StyledTitle>
 				<h4>
 					{title}
@@ -21,6 +22,6 @@ const SingleSpecialization: FC<ISingleSpecialization> = ({title, desc}) => {
 			</StyledParagraph>
 		</Wrapper>
 	);
-};
+});
 
 export default SingleSpecialization;

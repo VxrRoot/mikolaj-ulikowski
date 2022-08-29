@@ -2,6 +2,7 @@ import React, {FC, useEffect, useRef, forwardRef} from 'react';
 import Image from 'next/image';
 import gsap from "gsap";
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
+import {useCountUp} from 'react-countup';
 
 // Assets
 import ImgPhones from '../../../assets/tele.png';
@@ -17,8 +18,35 @@ import Circle from '../../elements/circle/Circle.component';
 gsap.registerPlugin(ScrollTrigger);
 
 const StatisticsSection: FC = () => {
-	const timeline = useRef<any>(null)
-	const refImage = useRef<any>(null)
+	const {start: startClients} = useCountUp({
+		end: 9,
+		ref: 'clients_number',
+		duration: 1,
+		startOnMount: false,
+		useEasing: true
+	});
+	const {start: startBudget} = useCountUp({
+		end: 25.000,
+		ref: 'budget_number',
+		suffix: 'PLN',
+		duration: 1,
+		startOnMount: false,
+		decimals: 3,
+		useEasing: true
+	});
+	const {start: startROI} = useCountUp({
+		end: 6.3,
+		start: 0.0,
+		ref: 'ROI_number',
+		duration: 1,
+		startOnMount: false,
+		decimals: 1,
+		useEasing: true,
+	});
+	
+	const timeline = useRef<any>(null);
+	const refImage = useRef<any>(null);
+	const containerRef = useRef<HTMLDivElement>(null)
 	
 	useEffect(() => {
 		timeline.current = gsap.timeline({
@@ -34,12 +62,35 @@ const StatisticsSection: FC = () => {
 			},
 			{x: 0, autoAlpha: 1, duration: 2, ease: 'power3', stagger: 0.1, scrollTrigger: {
 					trigger: refImage.current,
-					start: 'top bottom',
+					start: 'top center',
 				}});
 	}, [])
 	
+	useEffect(() => {
+		
+		const handleScrollFromTop = () => {
+			if(window && containerRef.current) {
+				const scrollFromTop = window.scrollY;
+				const distanceFromTop =  containerRef.current.offsetTop;
+				if(scrollFromTop >= distanceFromTop - 200) {
+					startClients();
+					startBudget();
+					startROI();
+					window.removeEventListener('scroll', handleScrollFromTop)
+				}
+			}
+		}
+		
+		if(window) {
+			window.addEventListener('scroll', handleScrollFromTop)
+		}
+		
+		return () => window.removeEventListener('scroll', handleScrollFromTop);
+		
+	}, [startBudget, startClients, startROI]);
+	
 	return (
-		<Container>
+		<Container ref={containerRef}>
 			<RowTemplate>
 				<Wrapper>
 					<StyledImageWr ref={refImage}>
@@ -47,19 +98,23 @@ const StatisticsSection: FC = () => {
 					</StyledImageWr>
 					<StyledNumbersCounterWr>
 						<div className="single_number">
-							<p>9</p>
+							<p id="clients_number">
+								0
+							</p>
 							<StyledButton>
 								Aktywni klienci
 							</StyledButton>
 						</div>
 						<div className="single_number">
-							<p>25000 pln</p>
+							<p id="budget_number">
+								0
+							</p>
 							<StyledButton>
 								Miesięczny budzet
 							</StyledButton>
 						</div>
 						<div className="single_number">
-							<p>6.3</p>
+							<p id="ROI_number">0.0</p>
 							<StyledButton>
 								średnia ROI
 							</StyledButton>
