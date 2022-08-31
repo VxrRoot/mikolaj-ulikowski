@@ -19,7 +19,9 @@ const BookConsultation = () => {
 						url="https://calendly.com/mikolajulikowski7/30min"
 						styles={{
 							zIndex: "100",
-							height: '700px'
+							height: '100%',
+							position: 'absolute',
+							width: '100%'
 						}}
 					/>
 				</CalendlyWrapper>

@@ -116,13 +116,13 @@ const StatisticsSection: FC<IStatisticsSection> = ({budget,clients,roi}) => {
 								0
 							</p>
 							<StyledButton>
-								Miesięczny budzet
+								Obsługiwany budżet
 							</StyledButton>
 						</div>
 						<div className="single_number">
 							<p id="ROI_number">0.0</p>
 							<StyledButton>
-								średnia ROI
+								Średni zwrot
 							</StyledButton>
 						</div>
 					</StyledNumbersCounterWr>

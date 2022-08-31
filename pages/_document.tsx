@@ -50,11 +50,9 @@ class MyDocument extends Document {
                {/*<link href="/static/icons/icon-32x32.png" rel="icon" type="image/png" sizes="32x32" />*/}
                {/*<link rel="manifest" href="/manifest.json" />*/}
                {/*<link rel="shortcut icon" href="/static/icons/favicon.ico" />*/}
-               <link rel="stylesheet" href="https://use.typekit.net/syj1pvy.css" />
-               <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;700&display=swap" rel="stylesheet"/>
                <link rel="preconnect" href="https://fonts.googleapis.com" />
                <link rel="preconnect" href="https://fonts.gstatic.com" />
-               <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+               <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
             </Head>
             <body>
                <Main />

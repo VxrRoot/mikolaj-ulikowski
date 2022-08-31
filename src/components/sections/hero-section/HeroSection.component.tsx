@@ -12,7 +12,7 @@ import SvgWave from '../../../assets/wave.svg';
 import UseScrollToSection from '../../../hooks/UseScrollToSection.hook';
 
 // Styled Components
-import {StyledImageWrapper, Wrapper, StyledContentWrapper, StyledCircle, StyledBottomSection, OuterWrapper, StyledButton} from './HeroSection.styles';
+import {StyledImageWrapper, Wrapper, StyledContentWrapper, StyledCircle, StyledBottomSection, OuterWrapper, StyledButtonWr, StyledButton} from './HeroSection.styles';
 
 // Components
 import Circle from '../../elements/circle/Circle.component';
@@ -65,16 +65,18 @@ const HeroSection: FC<IHeroSection> = ({meetingRef, pageContent}) => {
 						<h1 ref={headline} dangerouslySetInnerHTML={{__html: pageContent.headline}} />
 						<span className="space" />
 						<h2 className="subtitle" ref={subtitle}>
-							Od 3 lat pomagam małym i średnim firmom zabłysnąć w internecie. <br/>
+							Od 3 lat pomagam małym i średnim firmom zabłysnąć w internecie.
 							Prowadzę kampanie marketingowe nastawione na zwiększanie sprzedaży
 							Lub pozyskanie nowych klientów
 						</h2>
-						<StyledButton 
-							ref={buttonRef} 
-							onClick={() => handleScrollToSection(meetingRef)}
-						>
-							Umów się na rozmowę
-						</StyledButton>
+						<StyledButtonWr>
+							<StyledButton 
+								ref={buttonRef} 
+								onClick={() => handleScrollToSection(meetingRef)}
+							>
+								Umów się na rozmowę
+							</StyledButton>	
+						</StyledButtonWr>
 					</StyledContentWrapper>
 					<StyledImageWrapper ref={imageRef}>
 						<Image src={PersonPng} alt="Owner" layout='responsive' priority={true}/>
@@ -88,8 +90,6 @@ const HeroSection: FC<IHeroSection> = ({meetingRef, pageContent}) => {
 				<SvgWave />
 			</StyledBottomSection>
 		</OuterWrapper>
-
-
 	);
 };
 

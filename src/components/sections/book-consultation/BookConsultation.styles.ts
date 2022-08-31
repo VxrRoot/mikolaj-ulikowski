@@ -7,10 +7,16 @@ export const StyledSection = styled.section`
 `;
 
 export const CalendlyWrapper = styled.div`
+	position: relative;
 	margin: 100px 0;
+	min-height: 1060px;
 	
 	.calendly {
 		z-index: 100 !important;
+	}
+	
+	@media(min-width: 1016px) {
+		min-height: 700px;
 	}
 	
 	@media(min-width: 1024px) {

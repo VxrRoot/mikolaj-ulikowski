@@ -47,7 +47,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledHeader = styled.header`
-	padding-top: 8px;
+	padding: 8px 8px 0 8px;
 	display: flex;
 	width: 100%;
 
@@ -62,12 +62,18 @@ export const LogoWrapper = styled.div`
 
 	svg {
 		width: auto;
-		height: 40px;
+		height: 34px;
 		fill: white;
 	}
 
 	@media(min-width: 1024px) {
 		margin-top: 0;
+
+		svg {
+			width: auto;
+			height: 40px;
+			fill: white;
+		}
 	}
 `;
 

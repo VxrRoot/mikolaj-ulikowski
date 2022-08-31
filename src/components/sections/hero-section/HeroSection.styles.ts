@@ -3,13 +3,13 @@ import styled from 'styled-components';
 export const OuterWrapper = styled.section`
 	padding-top: 64px;
 	position: relative;
-	//background: rgb(53,45,42);
-	//background: linear-gradient(0deg, rgba(53,45,42,1) 0%, rgba(131,125,125,1) 54%);
-	background-color: #3D3938;
-	padding-bottom: 10px;
+	background: rgb(53,45,42);
+	background: linear-gradient(0deg, rgba(53,45,42,1) 10%, rgba(122,117,117,1) 100%);
+	/* background-color: #0A2328; */
+	/* padding-bottom: 100px; */
 	
 	@media(min-width: 1024px) {
-		padding-bottom: 50px;
+		padding-bottom: 35px;
 	}
 	
 	//@media(min-width: 1400px) {
@@ -18,6 +18,7 @@ export const OuterWrapper = styled.section`
 `;
 
 export const Wrapper = styled.div`
+	padding: 8px;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -33,14 +34,12 @@ export const StyledContentWrapper = styled.div`
 	
 	h1 {
 		opacity: 0;
+		margin: 16px 0;
 		color: ${({theme}) => theme.colorWhite};
-		font-size: 22px;
-		line-height: 32px;
+		font-size: 24px;
+		line-height: 30px;
 		font-weight: 700;
-		text-align: left;
-		max-width: 90%;
-		font-family: ${({theme}) => theme.fontFamilyOpenSans};
-		margin: 0;
+		font-family: ${({theme}) => theme.fontFamilyRoboto};
 	}
 	
 	.space {
@@ -48,44 +47,48 @@ export const StyledContentWrapper = styled.div`
 		height: 4px;
 		width: 60px;
 		background-color: ${({theme}) => theme.colorPeach};
-		margin: 15px 0;
 	}
 	
 	.subtitle {
 		opacity: 0;
-		display: none;
 		font-size: 16px;
 		line-height: 22px;
+		margin: 16px 0;
 		color: ${({theme}) => theme.colorWhite};
 		text-align: left;
-		max-width: 90%;
-		font-family: ${({theme}) => theme.fontFamilyOpenSans};
+		font-family: ${({theme}) => theme.fontFamilyRoboto};
 		font-weight: 400;
 	}
 
 	@media(min-width: 350px) {
 		h1 {
+			font-size: 24px;
+			font-family: ${({theme}) => theme.fontFamilyRoboto};
+			font-weight: 700;
+			line-height: 36px;
+		}
+	}
+
+	@media(min-width: 380px) {
+		h1 {
 			font-size: 28px;
-			line-height: 38px;
 		}
 	}
 
 	@media(min-width: 700px) {
+		margin-top: 50px;
 		h1 {
-			font-size: 35px;
-			line-height: 45px;
-		}
-		.subtitle {
-			display: block;
+			font-size: 42px;
+			line-height: 50px;
 		}
 	}
 
-	@media(min-width: 950px) {
+	@media(min-width: 1060px) {
 		margin-top: 100px;
 
 		h1 {
-			font-size: 40px;
-			line-height: 50px;
+			font-size: 46px;
+			line-height: 56px;
 			padding-right: 0;
 			margin-right: 0;
 		}
@@ -93,15 +96,16 @@ export const StyledContentWrapper = styled.div`
 		.subtitle {
 			font-size: 18px;
 			line-height: 30px;
+			max-width: 90%;
 		}
 	}
 
-	@media(min-width: 1130px) {
+	@media(min-width: 1170px) {
 		margin-top: 100px;
 		
 		h1 {
-			font-size: 48px;
-			line-height: 60px;
+			font-size: 54px;
+			line-height: 64px;
 		}
 
 		.subtitle {
@@ -115,12 +119,12 @@ export const StyledImageWrapper = styled.div`
 	z-index: 0;
 	width: 70%;
 	max-width: 300px;
-	margin-left: auto;
+	margin: 0 auto;
 	opacity: 0;
 
 	@media(min-width: 700px) {
+		margin-left: auto;
 		margin-top: -50px;
-		width: 50%;
 	}
 
 	@media(min-width: 1024px) {
@@ -158,6 +162,16 @@ export const StyledBottomSection = styled.div`
 	}
 `;
 
+export const StyledButtonWr = styled.div`
+	display: flex;
+	justify-content: center;
+	margin: 30px 0;
+	
+	@media(min-width: 800px) {
+		justify-content: flex-start;
+	}
+`;
+
 export const StyledButton = styled.button`
 	opacity: 0;
 	color: ${({theme}) => theme.colorBlack};
@@ -166,14 +180,16 @@ export const StyledButton = styled.button`
 	border: none;
 	padding: 5px 15px;
 	border-radius: 50px;
-	margin-top: 14px;
+	margin: 0;
 	font-weight: 600;
 	font-size: 12px;
 	cursor: pointer;
 	transition: .2s;
+	font-family: ${({theme}) => theme.fontFamilyRoboto};
 	
 	&:hover {
 		background-color: ${({theme}) => theme.darkPeach};
+		color: white;
 		//-webkit-box-shadow: inset 0px 0px 0px 1px white;
 		//-moz-box-shadow: inset 0px 0px 0px 1px white;
 		//box-shadow: inset 0px 0px 0 1px white;
