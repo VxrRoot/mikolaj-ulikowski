@@ -78,7 +78,10 @@ const OpinionSection = forwardRef(({allOpinions}: IOpinionSection, ref: Forwarde
 						>
 							{
 								allOpinions.map(opinion => (
-									<SwiperSlide className='slide'>
+									<SwiperSlide 
+										key={opinion.id}
+										className='slide'
+									>
 										<div className="img_wr">
 											<Image 
 												src={opinion.img?.url ? opinion.img.url : imageUser} 

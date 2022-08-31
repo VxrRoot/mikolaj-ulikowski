@@ -14,33 +14,6 @@ import SectionTitle from '../../elements/section-title/SectionTitle.component';
 import SingleSpecialization from './elements/single-specialization/SingleSpecialization.components';
 import Circle from '../../elements/circle/Circle.component';
 
-const specializationsData = [
-	{
-		title: 'Fb Ads',
-		desc: 'Kampania Ads pozwala na natychmiastowe wyświetlenie reklam kierowanych do sprecyzowanej grupy Klientów i daje szybkie efekty. Ponadto w odróżnieniu od Facebooka, tutaj płacimy dopiero, gdy ktoś kliknie w nasza reklamę, a nie za wyświetlenia.'
-	},
-	{
-		title: 'Fb Ads',
-		desc: 'Kampania Ads pozwala na natychmiastowe wyświetlenie reklam kierowanych do sprecyzowanej grupy Klientów i daje szybkie efekty. Ponadto w odróżnieniu od Facebooka, tutaj płacimy dopiero, gdy ktoś kliknie w nasza reklamę, a nie za wyświetlenia.'
-	},
-	{
-		title: 'Fb Ads',
-		desc: 'Kampania Ads pozwala na natychmiastowe wyświetlenie reklam kierowanych do sprecyzowanej grupy Klientów i daje szybkie efekty. Ponadto w odróżnieniu od Facebooka, tutaj płacimy dopiero, gdy ktoś kliknie w nasza reklamę, a nie za wyświetlenia.'
-	},
-	{
-		title: 'Fb Ads',
-		desc: 'Kampania Ads pozwala na natychmiastowe wyświetlenie reklam kierowanych do sprecyzowanej grupy Klientów i daje szybkie efekty. Ponadto w odróżnieniu od Facebooka, tutaj płacimy dopiero, gdy ktoś kliknie w nasza reklamę, a nie za wyświetlenia.'
-	},
-	{
-		title: 'Fb Ads',
-		desc: 'Kampania Ads pozwala na natychmiastowe wyświetlenie reklam kierowanych do sprecyzowanej grupy Klientów i daje szybkie efekty. Ponadto w odróżnieniu od Facebooka, tutaj płacimy dopiero, gdy ktoś kliknie w nasza reklamę, a nie za wyświetlenia.'
-	},
-	{
-		title: 'Fb Ads',
-		desc: 'Kampania Ads pozwala na natychmiastowe wyświetlenie reklam kierowanych do sprecyzowanej grupy Klientów i daje szybkie efekty. Ponadto w odróżnieniu od Facebooka, tutaj płacimy dopiero, gdy ktoś kliknie w nasza reklamę, a nie za wyświetlenia.'
-	},
-]
-
 interface ISpecializationsSection {
 	specializations: {
 		id: string,
@@ -51,7 +24,7 @@ interface ISpecializationsSection {
 
 // eslint-disable-next-line react/display-name
 const SpecializationsSection = forwardRef((props: ISpecializationsSection, ref: ForwardedRef<HTMLDivElement> ) => {
-	const specializationsRefs = useRef(specializationsData.map(() => createRef<HTMLDivElement>()));
+	const specializationsRefs = useRef(props.specializations.map(() => createRef<HTMLDivElement>()));
 	const timeline = useRef<any>(null);
 	const refWrapper = useRef<any>(null);
 	
