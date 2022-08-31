@@ -17,16 +17,22 @@ import Circle from '../../elements/circle/Circle.component';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const StatisticsSection: FC = () => {
+interface IStatisticsSection {
+	clients: number,
+	roi: number,
+	budget: number
+}
+
+const StatisticsSection: FC<IStatisticsSection> = ({budget,clients,roi}) => {
 	const {start: startClients} = useCountUp({
-		end: 9,
+		end: clients,
 		ref: 'clients_number',
 		duration: 1.1,
 		startOnMount: false,
 		useEasing: true
 	});
 	const {start: startBudget} = useCountUp({
-		end: 25.000,
+		end: Number(`${budget}.000`),
 		ref: 'budget_number',
 		suffix: 'PLN',
 		duration: 1.5,
@@ -35,7 +41,7 @@ const StatisticsSection: FC = () => {
 		useEasing: true
 	});
 	const {start: startROI} = useCountUp({
-		end: 6.3,
+		end: roi,
 		start: 0.0,
 		ref: 'ROI_number',
 		duration: 1.3,

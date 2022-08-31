@@ -41,8 +41,16 @@ const specializationsData = [
 	},
 ]
 
+interface ISpecializationsSection {
+	specializations: {
+		id: string,
+		name: string,
+		description: string
+	}[]
+}
+
 // eslint-disable-next-line react/display-name
-const SpecializationsSection = forwardRef((props, ref: ForwardedRef<HTMLDivElement> ) => {
+const SpecializationsSection = forwardRef((props: ISpecializationsSection, ref: ForwardedRef<HTMLDivElement> ) => {
 	const specializationsRefs = useRef(specializationsData.map(() => createRef<HTMLDivElement>()));
 	const timeline = useRef<any>(null);
 	const refWrapper = useRef<any>(null);
@@ -73,12 +81,12 @@ const SpecializationsSection = forwardRef((props, ref: ForwardedRef<HTMLDivEleme
 					<StyledSpecializationsWrapper>
 						<span className="items_wr">
 							{
-								specializationsData.map((item, idx) => (
+								props.specializations.map((item, idx) => (
 									<SingleSpecialization
-										key={idx}
+										key={item.id}
 										ref={specializationsRefs.current[idx]}
-										title={item.title}
-										desc={item.desc}
+										title={item.name}
+										desc={item.description}
 									/>
 								))
 							}

@@ -29,7 +29,7 @@ class MyDocument extends Document {
    }
    render () {
       return (
-         <Html lang="en">
+         <Html lang="pl">
             <Head>
                {/*<meta name="application-name" content={process.env.NEXT_PUBLIC_SITE_URL} />*/}
                <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -42,7 +42,6 @@ class MyDocument extends Document {
                <meta name="robots" content="noodp" />
                {/*<meta name="copyright" content={process.env.NEXT_PUBLIC_SITE_URL} />*/}
                {/*<meta name="author" content={process.env.NEXT_PUBLIC_SITE_URL} />*/}
-               {/*<meta name="viewport" content="width=device-width, initial-scale=1" />*/}
                <meta httpEquiv="Content-Type" content="text/html; charset=uft-8" />
                {/*<meta property="og:site_name" content={process.env.NEXT_PUBLIC_APP_NAME} />*/}
                {/*<link rel="apple-touch-icon" sizes="120x120" href="/static/icons/apple-touch-icon-120x120.png" />*/}

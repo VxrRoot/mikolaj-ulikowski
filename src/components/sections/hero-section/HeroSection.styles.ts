@@ -116,7 +116,7 @@ export const StyledImageWrapper = styled.div`
 	width: 70%;
 	max-width: 300px;
 	margin-left: auto;
-	//margin-top: -50px;
+	opacity: 0;
 
 	@media(min-width: 700px) {
 		margin-top: -50px;

@@ -19,10 +19,14 @@ import Circle from '../../elements/circle/Circle.component';
 import RowTemplate from '../../templates/RowTemplate';
 
 interface IHeroSection {
-	meetingRef: MutableRefObject<HTMLDivElement>;
+	meetingRef: MutableRefObject<HTMLDivElement>,
+	pageContent: {
+		headline: string,
+		subtitle: string
+	};
 }
 
-const HeroSection: FC<IHeroSection> = ({meetingRef}) => {
+const HeroSection: FC<IHeroSection> = ({meetingRef, pageContent}) => {
 	const headline = useRef<any>(null);
 	const subtitle = useRef<any>(null);
 	const imageRef = useRef<any>(null);
@@ -35,7 +39,7 @@ const HeroSection: FC<IHeroSection> = ({meetingRef}) => {
 		timeLine.current = gsap.timeline();
 		
 		timeLine.current
-			.set([headline.current, buttonRef.current],
+			.set([headline.current, buttonRef.current, imageRef.current],
 				{autoAlpha:0})
 			.fromTo(headline.current,
 				{x: -100, autoAlpha: 0, ease: Power3.easeOut},
@@ -58,11 +62,7 @@ const HeroSection: FC<IHeroSection> = ({meetingRef}) => {
 			<RowTemplate>
 				<Wrapper>
 					<StyledContentWrapper>
-						<h1 ref={headline}>
-							Hej! <br/>
-							Tu Mikołaj Ulikowski, <br/>
-							specjalista od e-marketingu
-						</h1>
+						<h1 ref={headline} dangerouslySetInnerHTML={{__html: pageContent.headline}} />
 						<span className="space" />
 						<h2 className="subtitle" ref={subtitle}>
 							Od 3 lat pomagam małym i średnim firmom zabłysnąć w internecie. <br/>

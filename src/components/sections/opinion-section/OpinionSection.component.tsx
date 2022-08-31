@@ -9,7 +9,6 @@ import {
 } from 'swiper/react';
 import {
 	Navigation,
-	Pagination,
 	Autoplay,
 } from 'swiper';
 import 'swiper/css';
@@ -19,6 +18,9 @@ import 'swiper/css/pagination';
 // Assets
 import imageUser from '../../../assets/mikolaj - koło.png';
 
+// Types
+import { allOpinionsType } from '../../../models/getDataQuery.model';
+
 // Styled Components
 import {Wrapper, OuterWrapper, SliderWrapper, ButtonsWr, StyledCircle} from './OpinionSection.styles';
 
@@ -27,8 +29,12 @@ import RowTemplate from '../../templates/RowTemplate';
 import SectionTitle from '../../elements/section-title/SectionTitle.component';
 import Circle from '../../elements/circle/Circle.component';
 
+interface IOpinionSection {
+	allOpinions: allOpinionsType
+}
+
 // eslint-disable-next-line react/display-name
-const OpinionSection = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
+const OpinionSection = forwardRef(({allOpinions}: IOpinionSection, ref: ForwardedRef<HTMLDivElement>) => {
 	const timeline = useRef<any>(null);
 	const wrapperRef = useRef<any>(null);
 	
@@ -70,33 +76,29 @@ const OpinionSection = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => 
 							}}
 							speed={1000}
 						>
-							<SwiperSlide className="slide">
-								<div className="img_wr">
-									<Image src={imageUser} width={80} height={80} alt="author"/>
-								</div>
-								<div className="slide_content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, asperiores beatae commodi cum dicta distinctio, earum eum fuga illo inventore labore libero molestias natus nesciunt, possimus reprehenderit rerum sed temporibus.</p>
-									<div className="author">Dawid Slowik</div>
-								</div>
-							</SwiperSlide>
-							<SwiperSlide className="slide">
-								<div className="img_wr">
-									<Image src={imageUser} width={80} height={80} alt="author"/>
-								</div>
-								<div className="slide_content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, asperiores beatae commodi cum dicta distinctio, earum eum fuga illo inventore labore libero molestias natus nesciunt, possimus reprehenderit rerum sed temporibus.</p>
-									<div className="author">Dawid Slowik</div>
-								</div>
-							</SwiperSlide>
-							<SwiperSlide className="slide">
-								<div className="img_wr">
-									<Image src={imageUser} width={80} height={80} alt="author"/>
-								</div>
-								<div className="slide_content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, asperiores beatae commodi cum dicta distinctio, earum eum fuga illo inventore labore libero molestias natus nesciunt, possimus reprehenderit rerum sed temporibus.</p>
-									<div className="author">Dawid Slowik</div>
-								</div>
-							</SwiperSlide>
+							{
+								allOpinions.map(opinion => (
+									<SwiperSlide className='slide'>
+										<div className="img_wr">
+											<Image 
+												src={opinion.img?.url ? opinion.img.url : imageUser} 
+												alt={opinion.img?.url ? opinion.img.url : 'author'}
+												width={80} 
+												height={80} 
+												className='img'
+											/>
+										</div>
+										<div className="slide_content">
+											<p>{opinion.description}</p>
+											<div className="author">{opinion.author}</div>
+											{opinion.company 
+												? <p className='company_content'>{opinion.company}</p>
+												: null
+											}
+										</div>
+									</SwiperSlide>
+								))
+							}
 							<ButtonsWr>
 								<div className="prev_btn" />
 								<div className="next_btn" />

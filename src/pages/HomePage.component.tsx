@@ -9,7 +9,10 @@ import AboutMe from '../components/sections/about-me-section/AboutMe.component';
 import BookConsultation from '../components/sections/book-consultation/BookConsultation.component';
 import MainTemplate from '../components/templates/MainTemplate';
 
-const HomePage: FC = () => {
+// Model
+import {ModelGetQuery} from '../models/getDataQuery.model';
+
+const HomePage: FC<ModelGetQuery> = ({data}) => {
 	const heroSectionRef = useRef<HTMLDivElement>(null);
 	const specializationsSectionRef = useRef<HTMLDivElement>(null!);
 	const opinionSectionRef = useRef<HTMLDivElement>(null!);
@@ -21,10 +24,23 @@ const HomePage: FC = () => {
 			opinionRef={opinionSectionRef}
 			contactRef={meetingRef}
 		>
-			<HeroSection meetingRef={meetingRef} />
-			<StatisticsSection />
-			<SpecializationsSection ref={specializationsSectionRef} />
-			<OpinionSection ref={opinionSectionRef} />
+			<HeroSection 
+				meetingRef={meetingRef} 
+				pageContent={data.pageContent}	
+			/>
+			<StatisticsSection 
+				budget={data.statistic.budget}
+				clients={data.statistic.clients}
+				roi={data.statistic.roi}
+			/>
+			<SpecializationsSection 
+				ref={specializationsSectionRef} 
+				specializations={data.allSpecializations}
+			/>
+			<OpinionSection 
+				ref={opinionSectionRef} 
+				allOpinions={data.allOpinions}
+			/>
 			<AboutMe ref={meetingRef} />
 			<BookConsultation />
 		</MainTemplate>

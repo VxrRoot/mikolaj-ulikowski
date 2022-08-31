@@ -17,5 +17,8 @@ module.exports = withReactSvg({
       ssr: true,
       cssProp: true,
     }
+  },
+  images: {
+    domains: ['www.datocms-assets.com']
   }
 })

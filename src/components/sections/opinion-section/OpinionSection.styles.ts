@@ -31,6 +31,10 @@ export const SliderWrapper = styled.div`
 		
 		.img_wr {
 			flex-basis: 25%;
+
+			.img {
+				border-radius: 50%;
+			}
 		}
 		
 		.slide_content {
@@ -56,6 +60,12 @@ export const SliderWrapper = styled.div`
 					left: 0;
 					bottom: -8px;
 				}
+			}
+
+			.company_content {
+				margin-top: 15px;
+				font-size: 14px;
+				color: #3D3938;
 			}
 		}
 		
