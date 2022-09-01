@@ -54,23 +54,23 @@ const StatisticsSection: FC<IStatisticsSection> = ({budget,clients,roi}) => {
 	const refImage = useRef<any>(null);
 	const containerRef = useRef<HTMLDivElement>(null)
 	
-	// useEffect(() => {
-	// 	timeline.current = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: refImage.current,
-	// 			start: 'top top',
-	// 			scrub: .4,
-	// 		}
-	// 	});
+	useEffect(() => {
+		timeline.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: refImage.current,
+				start: 'top top',
+				scrub: .4,
+			}
+		});
 
-	// 	gsap.fromTo(refImage.current.children, {
-	// 			x: '-=150%', autoAlpha: 0
-	// 		},
-	// 		{x: 0, autoAlpha: 1, duration: 2, ease: 'power3', stagger: 0.1, scrollTrigger: {
-	// 				trigger: refImage.current,
-	// 				start: 'top center',
-	// 			}});
-	// }, [])
+		gsap.fromTo(refImage.current.children, {
+				x: '-=150%', autoAlpha: 0
+			},
+			{x: 0, autoAlpha: 1, duration: 2, ease: 'power3', stagger: 0.1, scrollTrigger: {
+					trigger: refImage.current,
+					start: 'top center',
+				}});
+	}, [])
 	
 	useEffect(() => {
 		

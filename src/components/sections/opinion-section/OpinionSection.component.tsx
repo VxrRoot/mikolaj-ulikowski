@@ -38,18 +38,18 @@ const OpinionSection = forwardRef(({allOpinions}: IOpinionSection, ref: Forwarde
 	const timeline = useRef<any>(null);
 	const wrapperRef = useRef<any>(null);
 	
-	// useEffect(() => {
-	// 	timeline.current = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: wrapperRef.current,
-	// 			start: 'top bottom'
-	// 		}
-	// 	})
+	useEffect(() => {
+		timeline.current = gsap.timeline({
+			scrollTrigger: {
+				trigger: wrapperRef.current,
+				start: 'top bottom'
+			}
+		})
 		
-	// 	timeline.current.fromTo(wrapperRef.current,
-	// 		{autoAlpha: 0, y: '+=100'},
-	// 		{autoAlpha: 1, y: 0, duration: 1});
-	// }, []);
+		timeline.current.fromTo(wrapperRef.current,
+			{autoAlpha: 0, y: '+=100'},
+			{autoAlpha: 1, y: 0, duration: 1});
+	}, []);
 	
 	return (
 		<OuterWrapper ref={ref}>
