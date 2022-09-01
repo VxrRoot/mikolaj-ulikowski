@@ -47,7 +47,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledHeader = styled.header`
-	padding: 8px 8px 0 8px;
+	padding: 16px 16px 0 16px;
 	display: flex;
 	width: 100%;
 
