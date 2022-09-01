@@ -13,7 +13,7 @@ const BookConsultation = () => {
 	const [loadedWindow, setLoadedWindow] = useState<boolean>(false);
 
 	useEffect(() => {
-		setTimeout(() => setLoadedWindow(true), 1000)
+		setTimeout(() => setLoadedWindow(true), 2000)
 	}, [])
 
 	return (
