@@ -35,27 +35,27 @@ const HeroSection: FC<IHeroSection> = ({meetingRef, pageContent}) => {
 
 	const {handleScrollToSection} = UseScrollToSection();
 	
-	// useEffect(() => {
-	// 	timeLine.current = gsap.timeline();
+	useEffect(() => {
+		timeLine.current = gsap.timeline();
 		
-	// 	timeLine.current
-	// 		.set([headline.current, buttonRef.current, imageRef.current],
-	// 			{autoAlpha:0})
-	// 		.fromTo(headline.current,
-	// 			{x: -100, autoAlpha: 0, ease: Power3.easeOut},
-	// 			{x: 0, autoAlpha: 1, duration: .8})
-	// 		.fromTo(buttonRef.current,
-	// 			{x: -100, autoAlpha: 0,},
-	// 			{x: 0, autoAlpha: 1, duration: .4})
-	// 		.fromTo(imageRef.current, 
-	// 			{y: '+=20', autoAlpha: 0}, 
-	// 			{y: 0, autoAlpha: 1, duration: .8})
-	// 		.fromTo(subtitle.current,
-	// 			{x: -200, autoAlpha: 0, ease: Power3.easeInOut},
-	// 			{x: 0, autoAlpha: 1, duration: 1})
+		timeLine.current
+			.set([headline.current, buttonRef.current, imageRef.current],
+				{autoAlpha:0})
+			.fromTo(headline.current,
+				{x: -100, autoAlpha: 0, ease: Power3.easeOut},
+				{x: 0, autoAlpha: 1, duration: .8})
+			.fromTo(buttonRef.current,
+				{x: -100, autoAlpha: 0,},
+				{x: 0, autoAlpha: 1, duration: .4})
+			.fromTo(imageRef.current, 
+				{y: '+=20', autoAlpha: 0}, 
+				{y: 0, autoAlpha: 1, duration: .8})
+			.fromTo(subtitle.current,
+				{x: -200, autoAlpha: 0, ease: Power3.easeInOut},
+				{x: 0, autoAlpha: 1, duration: 1})
 		
-	// 	return () => timeLine.current.kill();
-	// }, [timeLine])
+		return () => timeLine.current.kill();
+	}, [timeLine])
 	
 	return (
 		<OuterWrapper>
