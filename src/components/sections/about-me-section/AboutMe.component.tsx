@@ -20,18 +20,18 @@ const AboutMe = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const timeline = useRef<any>(null);
 	
-	useEffect(() => {
-		timeline.current = gsap.timeline({
-			scrollTrigger: {
-				trigger: wrapperRef.current,
-				start: 'top bottom'
-			}
-		})
+	// useEffect(() => {
+	// 	timeline.current = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			trigger: wrapperRef.current,
+	// 			start: 'top bottom'
+	// 		}
+	// 	})
 		
-		timeline.current.fromTo(wrapperRef.current,
-			{autoAlpha: 0, y: '+=100'},
-			{autoAlpha: 1, y: 0, duration: 1});
-	}, []);
+	// 	timeline.current.fromTo(wrapperRef.current,
+	// 		{autoAlpha: 0, y: '+=100'},
+	// 		{autoAlpha: 1, y: 0, duration: 1});
+	// }, []);
 	
 	return (
 		<StyledSection ref={wrapperRef}>

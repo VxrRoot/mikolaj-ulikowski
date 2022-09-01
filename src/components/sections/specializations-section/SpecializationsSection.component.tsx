@@ -28,22 +28,22 @@ const SpecializationsSection = forwardRef((props: ISpecializationsSection, ref: 
 	const timeline = useRef<any>(null);
 	const refWrapper = useRef<any>(null);
 	
-	useEffect(() => {
-		const elements = specializationsRefs.current.map(el => el.current);
+	// useEffect(() => {
+	// 	const elements = specializationsRefs.current.map(el => el.current);
 		
-		timeline.current = gsap.timeline({
-			scrollTrigger: {
-				trigger: refWrapper.current,
-				start: 'top center',
-			}
-		});
+	// 	timeline.current = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			trigger: refWrapper.current,
+	// 			start: 'top center',
+	// 		}
+	// 	});
 		
-		timeline.current.fromTo(elements,
-			{autoAlpha: 0, x: '-=100'},
-			{autoAlpha: 1, x: 0, stagger: 0.2, duration: 0.8})
+	// 	timeline.current.fromTo(elements,
+	// 		{autoAlpha: 0, x: '-=100'},
+	// 		{autoAlpha: 1, x: 0, stagger: 0.2, duration: 0.8})
 		
-		return () => timeline.current.kill();
-	}, []);
+	// 	return () => timeline.current.kill();
+	// }, []);
 	
 	
 	return (

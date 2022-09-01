@@ -33,7 +33,7 @@ export const StyledContentWrapper = styled.div`
 	z-index: 9;
 	
 	h1 {
-		opacity: 0;
+		/* opacity: 0; */
 		margin: 16px 0;
 		color: ${({theme}) => theme.colorWhite};
 		font-size: 24px;
@@ -50,7 +50,7 @@ export const StyledContentWrapper = styled.div`
 	}
 	
 	.subtitle {
-		opacity: 0;
+		/* opacity: 0; */
 		font-size: 16px;
 		line-height: 22px;
 		margin: 16px 0;
@@ -120,7 +120,7 @@ export const StyledImageWrapper = styled.div`
 	width: 70%;
 	max-width: 300px;
 	margin: 0 auto;
-	opacity: 0;
+	/* opacity: 0; */
 
 	@media(min-width: 700px) {
 		margin-left: auto;
