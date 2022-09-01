@@ -42,7 +42,7 @@ const HomePage: FC<ModelGetQuery> = ({data}) => {
 				allOpinions={data.allOpinions}
 			/>
 			<AboutMe ref={meetingRef} />
-			<BookConsultation />
+			{/* <BookConsultation /> */}
 		</MainTemplate>
 	);
 };
