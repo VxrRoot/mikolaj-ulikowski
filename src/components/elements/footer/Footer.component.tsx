@@ -81,7 +81,7 @@ const Footer: FC<IFooter> = ({contactRef, offerRef, opinionRef}) => {
 						<div className="copyrights">
 							<p>&copy; 2022. Wszelkie prawa zastrzeżone Ulikowski.pl</p><br />
 						 	<p className='author_paragraph'>Strona stworzona przez: 
-								<a href="https://www.linkedin.com/in/dawid-s%C5%82owik-343847233/" target="_blank">
+								<a href="https://www.linkedin.com/in/dawid-s%C5%82owik-343847233/" target="_blank" rel="noreferrer">
 									<span> Dawid Słowik</span>
 								</a> 
 								<a href="mailto: dawidslowik379@gmail.com" className='icon_mail_author'>
@@ -98,7 +98,7 @@ const Footer: FC<IFooter> = ({contactRef, offerRef, opinionRef}) => {
 								</Link>
 							</div>
 							<div className="single_icon">
-								<Link href="https://www.facebook.com" >
+								<Link href="https://www.facebook.com">
 									<a target="_blank">
 										<AiFillFacebook />
 									</a>
