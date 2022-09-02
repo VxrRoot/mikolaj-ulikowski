@@ -24,6 +24,7 @@ export const StyledTitle = styled.div`
 `;
 
 export const StyledParagraph = styled.p`
+	margin-top: 25px;
 	transition: .5s;
 `;
 
@@ -31,7 +32,7 @@ export const Wrapper = styled.div`
 	z-index: 2;
 	background-color: white;
 	border-radius: 25px;
-	padding: 20px;
+	padding: 30px;
 	flex: 1 1 300px;
 	cursor: pointer;
 

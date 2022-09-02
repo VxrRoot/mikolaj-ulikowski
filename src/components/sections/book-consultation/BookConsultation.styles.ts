@@ -8,11 +8,15 @@ export const StyledSection = styled.section`
 
 export const CalendlyWrapper = styled.div`
 	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin: 100px 0;
 	min-height: 1060px;
-	
-	.calendly {
-		z-index: 100 !important;
+
+	.spinner_wr {
+		width: 30px;
+		height: 30px;
 	}
 	
 	@media(min-width: 1016px) {

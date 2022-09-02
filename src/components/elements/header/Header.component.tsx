@@ -25,7 +25,7 @@ const Header: FC<IHeader> = ({offerRef, opinionRef, contactRef}) => {
 	}
 	
 	return (
-		<Wrapper>
+		<Wrapper isMobile={showMobileMenu}>
 			<RowTemplate>
 				<StyledHeader>
 					<LogoWrapper>

@@ -27,7 +27,11 @@ const MainTemplate: FC<IMainTemplate> = ({children, offerRef, opinionRef, contac
 			<main>
 				{children}
 			</main>
-			<Footer />
+			<Footer 
+				contactRef={contactRef}
+				offerRef={offerRef}
+				opinionRef={opinionRef}
+			/>
 		</Wrapper>
 	);
 };

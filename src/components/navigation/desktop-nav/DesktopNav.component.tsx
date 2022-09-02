@@ -20,7 +20,7 @@ const DesktopNav: FC<IDesktopNav> = ({offerRef, opinionRef, contactRef}) => {
 		<StyledNavigation>
 			<ul>
 				<li>
-					<span onClick={() => handleScrollToSection(offerRef)}>
+					<span>
 						Home
 					</span>
 				</li>

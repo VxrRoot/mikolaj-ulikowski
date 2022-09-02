@@ -28,7 +28,7 @@ const Home: NextPage<ModelGetQuery> = ({data}) => {
    return (
       <Fragment>
          <Head>
-            <title>Mikolaj Ulikowski</title>
+            <title>Mikolaj Ulikowski - SKUTECZNIE KREATYWNY MARKETING</title>
             <meta name="description" content="Mikolaj Ulikowski digital marketer" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
          </Head>

@@ -10,7 +10,7 @@ export const theme: DefaultTheme = {
 	colorBackgroundFooter: '#f2f2f2',
 	fontFamilyMontsserrat: `'Montserrat', sans-serif`,
 	fontFamilyRoboto: `'Roboto', sans-serif`,
-	fontFamilyOpenSans: `'Open Sans', sans-serif`,
+	fontFamilyOpenSans: `'Roboto', sans-serif`,
 	fontWeightLight: '300',
 	fontWeightNormal: '400',
 	fontWeightBold: '700',
