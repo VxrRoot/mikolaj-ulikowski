@@ -1,14 +1,15 @@
-import {FC} from 'react';
+import {FC, MutableRefObject} from 'react';
 import Link from 'next/link'
 
 // Icons
-import {AiFillInstagram, AiFillLinkedin, AiFillFacebook} from 'react-icons/ai';
+import {AiFillInstagram, AiFillLinkedin, AiFillFacebook, AiOutlineMail} from 'react-icons/ai';
+import {HiMail} from 'react-icons/hi';
 
 // Assets
 import SvgLogo from '../../../assets/logo.svg';
 
-// Data
-import {navItems} from '../../navigation/Navigation.data';
+// Hooks
+import UseScrollToSection from '../../../hooks/UseScrollToSection.hook';
 
 // Styled Components
 import {StyledFooter, StyledFooterCopyrights, StyledFooterInfo, StyledParagraph} from './Footer.styles';
@@ -16,7 +17,16 @@ import {StyledFooter, StyledFooterCopyrights, StyledFooterInfo, StyledParagraph}
 // Components
 import RowTemplate from '../../templates/RowTemplate';
 
-const Footer: FC = () => {
+interface IFooter {
+	offerRef: MutableRefObject<HTMLDivElement>;
+	opinionRef: MutableRefObject<HTMLDivElement>;
+	contactRef: MutableRefObject<HTMLDivElement>;
+}
+
+const Footer: FC<IFooter> = ({contactRef, offerRef, opinionRef}) => {
+
+	const {handleScrollToSection} = UseScrollToSection();
+
 	return (
 		<StyledFooter>
 			<StyledFooterInfo>
@@ -34,22 +44,32 @@ const Footer: FC = () => {
 							<StyledParagraph>Nawigacja</StyledParagraph>
 							<nav className="footer_nav">
 								<ul>
-									{
-										navItems.map((item, idx) => (
-											<li
-												key={idx}
-											>
-												{item.name}
-											</li>
-										))
-									}
+									<li>
+										<span onClick={() => handleScrollToSection(offerRef)}>
+											Home
+										</span>
+									</li>
+									<li>
+										<span onClick={() => handleScrollToSection(offerRef)}>
+											Oferta
+										</span>
+									</li>
+									<li>
+										<span onClick={() => handleScrollToSection(opinionRef)}>
+											Opinie
+										</span>
+									</li>
+									<li>
+										<span onClick={() => handleScrollToSection(contactRef)}>
+											Kontakt
+										</span>
+									</li>
 								</ul>
 							</nav>
 						</div>
 						<div className="contact">
 							<StyledParagraph>Kontakt</StyledParagraph>
-							<p className="contact_paragraph">+48 000 000 000</p>
-							<p className="contact_paragraph">+48 000 000 000</p>
+							<a href="tel:+48-798-558-732">+48 798 558 732</a> <br />
 							<a href="mailto: mikolajulikowski@gmail.com">mikolajulikowski@gmail.com</a>
 						</div>
 					</div>
@@ -59,7 +79,15 @@ const Footer: FC = () => {
 				<RowTemplate>
 					<div className="copy_social_wr">
 						<div className="copyrights">
-							&copy; 2022. Wszelkie prawa zastrzeżone Ulikowski.pl
+							<p>&copy; 2022. Wszelkie prawa zastrzeżone Ulikowski.pl</p><br />
+						 	<p className='author_paragraph'>Strona stworzona przez: 
+								<a href="https://www.linkedin.com/in/dawid-s%C5%82owik-343847233/" target="_blank">
+									<span> Dawid Słowik</span>
+								</a> 
+								<a href="mailto: dawidslowik379@gmail.com" className='icon_mail_author'>
+									<HiMail />
+								</a>
+							</p>
 						</div>
 						<div className="social_icons">
 							<div className="single_icon">

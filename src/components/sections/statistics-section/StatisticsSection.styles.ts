@@ -107,7 +107,7 @@ export const StyledNumbersCounterWr = styled.article`
 export const StyledBottomSection = styled.div`
 	width: 100%;
 	position: absolute;
-	bottom: -5px;
+	bottom: -6px;
 	left: 0;
 	
 	svg {

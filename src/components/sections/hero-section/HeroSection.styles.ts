@@ -29,11 +29,12 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledContentWrapper = styled.div`
+	opacity: 0;
 	margin-top: 40px;
 	z-index: 9;
 	
 	h1 {
-		opacity: 0;
+		/* opacity: 0; */
 		margin: 16px 0;
 		color: ${({theme}) => theme.colorWhite};
 		font-size: 24px;
@@ -50,7 +51,7 @@ export const StyledContentWrapper = styled.div`
 	}
 	
 	.subtitle {
-		opacity: 0;
+		/* opacity: 0; */
 		font-size: 16px;
 		line-height: 22px;
 		margin: 16px 0;
@@ -153,7 +154,7 @@ export const StyledCircle = styled.div`
 export const StyledBottomSection = styled.div`
 	width: 100%;
 	position: absolute;
-	bottom: -5px;
+	bottom: -6px;
 	left: 0;
 	
 	svg {
@@ -173,7 +174,7 @@ export const StyledButtonWr = styled.div`
 `;
 
 export const StyledButton = styled.button`
-	opacity: 0;
+	/* opacity: 0; */
 	color: ${({theme}) => theme.colorBlack};
 	background-color: ${({theme}) => theme.colorPeach};
 	height: 40px;

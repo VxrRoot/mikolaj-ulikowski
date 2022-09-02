@@ -19,10 +19,6 @@ export const CalendlyWrapper = styled.div`
 		height: 30px;
 	}
 	
-	.calendly {
-		z-index: 100 !important;
-	}
-	
 	@media(min-width: 1016px) {
 		min-height: 700px;
 	}

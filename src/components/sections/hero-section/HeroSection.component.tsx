@@ -1,7 +1,5 @@
 import React, {FC, useRef, useEffect, MutableRefObject} from 'react';
 import Image from 'next/image';
-
-import {Power3} from 'gsap';
 import gsap from 'gsap';
 
 // Assets
@@ -32,6 +30,7 @@ const HeroSection: FC<IHeroSection> = ({meetingRef, pageContent}) => {
 	const imageRef = useRef<any>(null);
 	const timeLine = useRef<any>(null);
 	const buttonRef = useRef<any>(null);
+	const contentWrapperRef = useRef<any>(null);
 
 	const {handleScrollToSection} = UseScrollToSection();
 	
@@ -39,20 +38,23 @@ const HeroSection: FC<IHeroSection> = ({meetingRef, pageContent}) => {
 		timeLine.current = gsap.timeline();
 		
 		timeLine.current
-			.set([headline.current, buttonRef.current, imageRef.current],
-				{autoAlpha:0})
-			.fromTo(headline.current,
-				{x: -100, autoAlpha: 0, ease: Power3.easeOut},
-				{x: 0, autoAlpha: 1, duration: .8})
-			.fromTo(buttonRef.current,
-				{x: -100, autoAlpha: 0,},
-				{x: 0, autoAlpha: 1, duration: .4})
-			.fromTo(imageRef.current, 
-				{y: '+=20', autoAlpha: 0}, 
+			// .set([headline.current, buttonRef.current, imageRef.current],
+			// 	{autoAlpha:1})
+			// .fromTo(headline.current,
+			// 	{x: -100, autoAlpha: 0, ease: Power3.easeOut},
+			// 	{x: 0, autoAlpha: 1, duration: .8})
+			// .fromTo(buttonRef.current,
+			// 	{x: -100, autoAlpha: 0,},
+			// 	{x: 0, autoAlpha: 1, duration: .4})
+			.fromTo(contentWrapperRef.current,
+				{y: '+=50', autoAlpha: 0},
 				{y: 0, autoAlpha: 1, duration: .8})
-			.fromTo(subtitle.current,
-				{x: -200, autoAlpha: 0, ease: Power3.easeInOut},
-				{x: 0, autoAlpha: 1, duration: 1})
+			.fromTo(imageRef.current, 
+				{y: '+=50', autoAlpha: 0}, 
+				{y: 0, autoAlpha: 1, duration: .8, delay: -.5})
+			// .fromTo(subtitle.current,
+			// 	{x: -200, autoAlpha: 0, ease: Power3.easeInOut},
+			// 	{x: 0, autoAlpha: 1, duration: 1})
 		
 		return () => timeLine.current.kill();
 	}, [timeLine])
@@ -61,7 +63,7 @@ const HeroSection: FC<IHeroSection> = ({meetingRef, pageContent}) => {
 		<OuterWrapper>
 			<RowTemplate>
 				<Wrapper>
-					<StyledContentWrapper>
+					<StyledContentWrapper ref={contentWrapperRef}>
 						<h1 ref={headline} dangerouslySetInnerHTML={{__html: pageContent.headline}} />
 						<span className="space" />
 						<h2 className="subtitle" ref={subtitle}>

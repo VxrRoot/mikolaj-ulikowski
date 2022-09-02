@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
 	background-color: ${({theme}) => theme.colorBackgroundFooter};
+	padding: 0 8px;
+	
+	@media(min-width: 1024px) {
+		padding: 0;
+	}
 `;
 
 export const StyledParagraph = styled.p`
@@ -75,9 +80,18 @@ export const StyledFooterInfo = styled.div`
 					li {
 						margin: 8px 0;
 						font-family: ${({theme}) => theme.fontFamilyOpenSans};
+						cursor: pointer;
 						font-weight: 400;
 						font-size: 16px;
 						line-height: 22px;
+
+						span {
+							transition: .3s;
+							
+							&:hover {
+								color: ${({theme}) => theme.colorPeach}
+							}	
+						}
 					}
 				}
 			}
@@ -90,13 +104,19 @@ export const StyledFooterInfo = styled.div`
 		.contact {
 			flex-basis: 25%;
 			padding-bottom: 32px;
-			
-			.contact_paragraph,
+	
 			a {
+				display: inline-block;
 				font-family: ${({theme}) => theme.fontFamilyOpenSans};
 				font-weight: 400;
 				font-size: 16px;
 				line-height: 22px;
+				margin: 5px 0;
+				transition: .3s;
+
+				&:hover {
+					color: ${({theme}) => theme.colorPeach}
+				}
 			}
 		}
 	}
@@ -121,6 +141,49 @@ export const StyledFooterCopyrights = styled.div`
 		.copyrights {
 			align-self: center;
 			margin: auto;
+
+			p {
+				margin: 0;
+				padding: 0;
+				text-align: center;
+
+				span {
+					color: ${({theme}) => theme.colorPeach};
+					font-weight: 600;
+					transition: .3s;
+
+					&:hover {
+						color: ${({theme}) => theme.colorBlack};
+					}
+				}
+			}
+			
+			.author_paragraph {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 6px;
+
+				.icon_mail_author {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					
+					svg {
+						cursor: pointer;
+						width: auto;
+						margin: 0 auto;
+						height: 18px;
+						transition: .3s;
+					}
+
+					&:hover {
+						svg {
+							fill: ${({theme}) => theme.colorPeach};
+						}
+					}
+				}
+			}
 
 			@media(min-width: 860px) {
 				position: absolute;

@@ -14,7 +14,7 @@ const BookConsultation = () => {
 	const [loadedWindow, setLoadedWindow] = useState<boolean>(false);
 
 	useEffect(() => {
-		setTimeout(() => setLoadedWindow(true), 4000)
+		setTimeout(() => setLoadedWindow(true), 5000)
 	}, [])
 
 	return (
@@ -32,7 +32,6 @@ const BookConsultation = () => {
 								<InlineWidget
 									url="https://calendly.com/mikolajulikowski7/30min"
 									styles={{
-										zIndex: "100",
 										height: '100%',
 										position: 'absolute',
 										width: '100%'

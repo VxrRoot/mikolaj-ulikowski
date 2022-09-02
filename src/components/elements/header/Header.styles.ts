@@ -1,5 +1,9 @@
 import styled, {keyframes} from 'styled-components';
 
+interface IWrapper {
+	isMobile: boolean;
+}
+
 const animationBurger1 = keyframes`
 	from {
 		background-color: white;
@@ -33,8 +37,8 @@ const animationBurger3 = keyframes`
 	}
 `;
 
-export const Wrapper = styled.div`
-	position: absolute;
+export const Wrapper = styled.div<IWrapper>`
+	position: ${({isMobile}) => isMobile ? 'fixed' : 'absolute'};
 	left: 0;
 	top: 0;
 	width: 100%;
