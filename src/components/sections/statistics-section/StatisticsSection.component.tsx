@@ -68,7 +68,7 @@ const StatisticsSection: FC<IStatisticsSection> = ({budget,clients,roi}) => {
 			},
 			{x: 0, autoAlpha: 1, duration: 2, ease: 'power3', stagger: 0.1, scrollTrigger: {
 					trigger: refImage.current,
-					start: 'top center',
+					start: '140px bottom',
 				}});
 	}, [])
 	
@@ -78,7 +78,7 @@ const StatisticsSection: FC<IStatisticsSection> = ({budget,clients,roi}) => {
 			if(window && containerRef.current) {
 				const scrollFromTop = window.scrollY;
 				const distanceFromTop =  containerRef.current.offsetTop;
-				if(scrollFromTop >= distanceFromTop - 200) {
+				if(scrollFromTop >= distanceFromTop - 500) {
 					startClients();
 					startBudget();
 					startROI();

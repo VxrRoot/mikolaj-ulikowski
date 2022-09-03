@@ -40,6 +40,7 @@ export const StyledFooterInfo = styled.div`
 			border-bottom: 1px solid #c3c3c3;
 			
 			.logo_wr {
+				cursor: pointer;
 				margin: 20px 0;
 				svg {
 					fill: black;

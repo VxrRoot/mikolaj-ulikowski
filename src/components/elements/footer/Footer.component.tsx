@@ -33,7 +33,7 @@ const Footer: FC<IFooter> = ({contactRef, offerRef, opinionRef}) => {
 				<RowTemplate>
 					<div className="info_wr">
 						<div className="info">
-							<div className="logo_wr">
+							<div className="logo_wr" onClick={() => handleScrollToSection()}>
 								<SvgLogo />
 							</div>
 							<p>
