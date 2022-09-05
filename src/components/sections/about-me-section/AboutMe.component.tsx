@@ -51,21 +51,21 @@ const AboutMe = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
 						<p>Znajdziesz mnie w social mediach</p>
 						<div className="social_icons">
 							<div className="single_icon">
-								<Link href="https://www.instagram.com">
+								<Link href="https://www.instagram.com/mikolaj.ulikowski/">
 									<a target="_blank">
 										<AiFillInstagram />
 									</a>
 								</Link>
 							</div>
 							<div className="single_icon">
-								<Link href="https://www.facebook.com" >
+								<Link href="https://www.facebook.com/ulikowskimarketing">
 									<a target="_blank">
 										<AiFillFacebook />
 									</a>
 								</Link>
 							</div>
 							<div className="single_icon">
-								<Link href="https://www.linkedin.com" >
+								<Link href="https://www.linkedin.com/in/mikolajulikowski/">
 									<a target="_blank">
 										<AiFillLinkedin />
 									</a>

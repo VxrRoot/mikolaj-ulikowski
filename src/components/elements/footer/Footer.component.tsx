@@ -78,6 +78,29 @@ const Footer: FC<IFooter> = ({contactRef, offerRef, opinionRef}) => {
 			<StyledFooterCopyrights>
 				<RowTemplate>
 					<div className="copy_social_wr">
+					<div className="social_icons">
+							<div className="single_icon">
+								<Link href="https://www.instagram.com/mikolaj.ulikowski/">
+									<a target="_blank">
+										<AiFillInstagram />
+									</a>
+								</Link>
+							</div>
+							<div className="single_icon">
+								<Link href="https://www.facebook.com/ulikowskimarketing">
+									<a target="_blank">
+										<AiFillFacebook />
+									</a>
+								</Link>
+							</div>
+							<div className="single_icon">
+								<Link href="https://www.linkedin.com/in/mikolajulikowski/">
+									<a target="_blank">
+										<AiFillLinkedin />
+									</a>
+								</Link>
+							</div>
+						</div>
 						<div className="copyrights">
 							<p>&copy; 2022. Wszelkie prawa zastrzeżone Ulikowski.pl</p><br />
 						 	<p className='author_paragraph'>Strona stworzona przez: 
@@ -88,29 +111,6 @@ const Footer: FC<IFooter> = ({contactRef, offerRef, opinionRef}) => {
 									<HiMail />
 								</a>
 							</p>
-						</div>
-						<div className="social_icons">
-							<div className="single_icon">
-								<Link href="https://www.instagram.com">
-									<a target="_blank">
-										<AiFillInstagram />
-									</a>
-								</Link>
-							</div>
-							<div className="single_icon">
-								<Link href="https://www.facebook.com">
-									<a target="_blank">
-										<AiFillFacebook />
-									</a>
-								</Link>
-							</div>
-							<div className="single_icon">
-								<Link href="https://www.linkedin.com" >
-									<a target="_blank">
-										<AiFillLinkedin />
-									</a>
-								</Link>
-							</div>
 						</div>
 					</div>
 				</RowTemplate>
