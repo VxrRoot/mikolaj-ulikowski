@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components';
+ import styled, {keyframes} from 'styled-components';
 
 interface IWrapper {
 	isMobile: boolean;
@@ -67,7 +67,7 @@ export const LogoWrapper = styled.div`
 	svg {
 		width: auto;
 		height: 34px;
-		fill: white;
+		fill: ${({theme}) => theme.colorPeach};
 	}
 
 	@media(min-width: 1024px) {
@@ -76,7 +76,7 @@ export const LogoWrapper = styled.div`
 		svg {
 			width: auto;
 			height: 40px;
-			fill: white;
+			fill: ${({theme}) => theme.colorPeach};
 		}
 	}
 `;

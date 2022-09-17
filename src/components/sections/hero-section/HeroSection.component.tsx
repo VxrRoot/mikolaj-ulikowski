@@ -66,11 +66,7 @@ const HeroSection: FC<IHeroSection> = ({meetingRef, pageContent}) => {
 					<StyledContentWrapper ref={contentWrapperRef}>
 						<h1 ref={headline} dangerouslySetInnerHTML={{__html: pageContent.headline}} />
 						<span className="space" />
-						<h2 className="subtitle" ref={subtitle}>
-							Od 3 lat pomagam małym i średnim firmom zabłysnąć w internecie.
-							Prowadzę kampanie marketingowe nastawione na zwiększanie sprzedaży
-							Lub pozyskanie nowych klientów
-						</h2>
+						<h2 className="subtitle" ref={subtitle} dangerouslySetInnerHTML={{__html: pageContent.subtitle}} />
 						<StyledButtonWr>
 							<StyledButton 
 								ref={buttonRef} 
