@@ -36,7 +36,7 @@ const AboutMe = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
 	return (
 		<StyledSection ref={wrapperRef}>
 			<RowTemplate>
-				<SectionTitle title="Porozmawiajmy!" />
+				<SectionTitle title="Kilka słów o mnie" />
 				<Wrapper ref={ref}>
 					<PhotoWr>
 						<Image src={AvatarImg} layout="responsive" alt="Mikolaj_zdjecie" />
@@ -44,9 +44,11 @@ const AboutMe = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
 					<AboutWr>
 						<h4>Kim jestem?</h4>
 						<ul>
-							<li>3 lata doświadczenia w marketingu internetowym</li>
-							<li>Specjalista od e-commerce szczególnie w branży sklepów internetowych</li>
-							<li>Ponad 1000 przeszkolonych osób</li>
+							<li>Ponad <b>800</b> osób wzięło udział w moich szkoleniach, w tym Ambasada USA z siedzibą w Warszawie, zespół Dyrektor Mary Kay Polska</li>
+							<li>Specjalizuję się w kampaniach Lead Generation oraz E-commerce</li>
+							<li> <b>1 500 000</b> wygenerowanej sprzedaży dla moich klientów</li>
+							<li> <b>74+</b> zadowolonych klientów</li>
+							<li>Z ciekawostek - studiuję Multimedia Design w Kopenhadze</li>
 						</ul>
 						<p>Znajdziesz mnie w social mediach</p>
 						<div className="social_icons">

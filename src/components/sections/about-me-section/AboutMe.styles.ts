@@ -100,11 +100,11 @@ export const StyledCircle = styled.div`
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	top: 38%;
-	left: 18%;
+	top: 30%;
+	left: 14%;
 
 	@media(min-width: 360px) {
-		top: 43%;
+		top: 38%;
 		left: 18%;
 	}
 	
