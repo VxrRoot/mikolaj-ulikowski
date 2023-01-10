@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.mikolajulikowski.pl
+
+# Sitemaps
+Sitemap: https://www.mikolajulikowski.pl/sitemap.xml
