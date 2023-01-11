@@ -63,6 +63,7 @@ class MyDocument extends Document {
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="google" content="notranslate" />
           <meta name="robots" content="noodp" />
+          <meta name="robots" content="index, follow" />
           <meta name="copyright" content="Mikolaj Ulikowski" />
           <meta name="author" content="Dawid Slowik" />
           <link
