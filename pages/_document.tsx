@@ -52,6 +52,10 @@ class MyDocument extends Document {
             content="default"
           />
           <meta
+            name="google-site-verification"
+            content="VSbgitfJ7CKStdop6KovA9VD2bftcCcpPU_03OLkY8k"
+          />
+          <meta
             name="apple-mobile-web-app-title"
             content="Mikolaj Ulikowski - SKUTECZNIE KREATYWNY MARKETING"
           />
