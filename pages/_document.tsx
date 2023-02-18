@@ -66,6 +66,7 @@ class MyDocument extends Document {
           <meta name="robots" content="index, follow" />
           <meta name="copyright" content="Mikolaj Ulikowski" />
           <meta name="author" content="Dawid Slowik" />
+          <link rel="canonical" href="https://mikolajulikowski.pl/" />
           <link
             rel="shortcut icon"
             type="image/png"
