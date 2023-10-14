@@ -120,14 +120,14 @@ const Footer: FC<IFooter> = ({ contactRef, offerRef, opinionRef }) => {
               <p className="author_paragraph">
                 Strona stworzona przez:
                 <a
-                  href="https://www.linkedin.com/in/dawid-s%C5%82owik-343847233/"
+                  href="https://www.web-nova.pl"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span> Dawid Słowik</span>
+                  <span> Web-nova </span>
                 </a>
                 <a
-                  href="mailto: dawidslowik379@gmail.com"
+                  href="mailto: office.webnova@gmail.com"
                   className="icon_mail_author"
                 >
                   <HiMail />
