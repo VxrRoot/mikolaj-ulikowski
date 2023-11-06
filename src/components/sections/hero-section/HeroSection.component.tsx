@@ -25,6 +25,7 @@ import {
 // Components
 import Circle from "../../elements/circle/Circle.component";
 import RowTemplate from "../../templates/RowTemplate";
+import { useTranslation } from "react-i18next";
 
 interface IHeroSection {
   meetingRef: MutableRefObject<HTMLDivElement>;
@@ -42,7 +43,11 @@ const HeroSection: FC<IHeroSection> = ({ meetingRef, pageContent }) => {
   const buttonRef = useRef<any>(null);
   const contentWrapperRef = useRef<any>(null);
 
+  const { t } = useTranslation();
+
   const { handleScrollToSection } = UseScrollToSection();
+
+  console.log(t("button-book"));
 
   useEffect(() => {
     timeLine.current = gsap.timeline();
@@ -85,20 +90,22 @@ const HeroSection: FC<IHeroSection> = ({ meetingRef, pageContent }) => {
           <StyledContentWrapper ref={contentWrapperRef}>
             <h1
               ref={headline}
-              dangerouslySetInnerHTML={{ __html: pageContent.headline }}
+              // dangerouslySetInnerHTML={{ __html: pageContent.headline }}
+              dangerouslySetInnerHTML={{ __html: t("headline") }}
             />
             <span className="space" />
             <h2
               className="subtitle"
               ref={subtitle}
-              dangerouslySetInnerHTML={{ __html: pageContent.subtitle }}
+              // dangerouslySetInnerHTML={{ __html: pageContent.subtitle }}
+              dangerouslySetInnerHTML={{ __html: t("subtitle") }}
             />
             <StyledButtonWr>
               <StyledButton
                 ref={buttonRef}
                 onClick={handleClickBookConsultation}
               >
-                Umów się na rozmowę
+                {t("button-book")}
               </StyledButton>
             </StyledButtonWr>
           </StyledContentWrapper>
