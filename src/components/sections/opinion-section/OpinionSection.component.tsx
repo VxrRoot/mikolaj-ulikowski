@@ -28,6 +28,7 @@ import {
 import RowTemplate from "../../templates/RowTemplate";
 import SectionTitle from "../../elements/section-title/SectionTitle.component";
 import Circle from "../../elements/circle/Circle.component";
+import { useTranslation } from "react-i18next";
 
 interface IOpinionSection {
   allOpinions: allOpinionsType;
@@ -38,6 +39,8 @@ const OpinionSection = forwardRef(
   ({ allOpinions }: IOpinionSection, ref: ForwardedRef<HTMLDivElement>) => {
     const timeline = useRef<any>(null);
     const wrapperRef = useRef<any>(null);
+
+    const { t } = useTranslation();
 
     useEffect(() => {
       timeline.current = gsap.timeline({
@@ -58,7 +61,7 @@ const OpinionSection = forwardRef(
       <OuterWrapper ref={ref}>
         <RowTemplate>
           <Wrapper ref={wrapperRef}>
-            <SectionTitle title="Zobacz co mówią moi klienci" />
+            <SectionTitle title={t("opinion-sec-title")} />
             <SliderWrapper>
               <Swiper
                 className="swiper"

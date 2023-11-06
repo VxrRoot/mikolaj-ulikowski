@@ -26,6 +26,7 @@ import {
 
 // Components
 import RowTemplate from "../../templates/RowTemplate";
+import { useTranslation } from "react-i18next";
 
 interface IFooter {
   offerRef: MutableRefObject<HTMLDivElement>;
@@ -35,6 +36,7 @@ interface IFooter {
 
 const Footer: FC<IFooter> = ({ contactRef, offerRef, opinionRef }) => {
   const { handleScrollToSection } = UseScrollToSection();
+  const { t } = useTranslation();
 
   return (
     <StyledFooter>
@@ -45,41 +47,37 @@ const Footer: FC<IFooter> = ({ contactRef, offerRef, opinionRef }) => {
               <div className="logo_wr" onClick={() => handleScrollToSection()}>
                 <SvgLogo />
               </div>
-              <p>
-                Zadbam o Twój marketing w Social Mediach, który będzie
-                regularnie dostarczał Ci nowych klientów i zwiększał sprzedaż. A
-                to wszystko przy minimalnym zaangażowaniu z Twojej strony.
-              </p>
+              <p dangerouslySetInnerHTML={{ __html: t("footer-inf-1") }} />
             </div>
             <div className="navigation">
-              <StyledParagraph>Nawigacja</StyledParagraph>
+              <StyledParagraph>{t("footer-nav-p")}</StyledParagraph>
               <nav className="footer_nav">
                 <ul>
                   <li>
                     <span onClick={() => handleScrollToSection(offerRef)}>
-                      Home
+                      {t("nav-home")}
                     </span>
                   </li>
                   <li>
                     <span onClick={() => handleScrollToSection(offerRef)}>
-                      Oferta
+                      {t("nav-oferta")}
                     </span>
                   </li>
                   <li>
                     <span onClick={() => handleScrollToSection(opinionRef)}>
-                      Opinie
+                      {t("nav-opinie")}
                     </span>
                   </li>
                   <li>
                     <span onClick={() => handleScrollToSection(contactRef)}>
-                      Kontakt
+                      {t("nav-kontakt")}
                     </span>
                   </li>
                 </ul>
               </nav>
             </div>
             <div className="contact">
-              <StyledParagraph>Kontakt</StyledParagraph>
+              <StyledParagraph>{t("footer-contact-p")}</StyledParagraph>
               <a href="tel:+48-798-558-732">+48 798 558 732</a> <br />
               <a href="mailto: mikolajulikowski@gmail.com">
                 mikolajulikowski7@gmail.com
@@ -115,10 +113,12 @@ const Footer: FC<IFooter> = ({ contactRef, offerRef, opinionRef }) => {
               </div>
             </div>
             <div className="copyrights">
-              <p>&copy; 2022. Wszelkie prawa zastrzeżone Ulikowski.pl</p>
+              <p dangerouslySetInnerHTML={{ __html: t("footer-copy") }} />
               <br />
               <p className="author_paragraph">
-                Strona stworzona przez:
+                <p
+                  dangerouslySetInnerHTML={{ __html: t("footer-created-by") }}
+                />
                 <a
                   href="https://www.web-nova.pl"
                   target="_blank"

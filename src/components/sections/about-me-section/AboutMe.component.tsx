@@ -24,11 +24,14 @@ import AvatarImg from "../../../assets/mikolaj - koło.png";
 import SectionTitle from "../../elements/section-title/SectionTitle.component";
 import RowTemplate from "../../templates/RowTemplate";
 import Circle from "../../elements/circle/Circle.component";
+import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line react/display-name
 const AboutMe = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const timeline = useRef<any>(null);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     timeline.current = gsap.timeline({
@@ -48,35 +51,46 @@ const AboutMe = forwardRef((Props, ref: ForwardedRef<HTMLDivElement>) => {
   return (
     <StyledSection ref={wrapperRef}>
       <RowTemplate>
-        <SectionTitle title="Kilka słów o mnie" />
+        <SectionTitle title={t("me-sec-title")} />
         <Wrapper ref={ref}>
           <PhotoWr>
             <Image src={AvatarImg} layout="responsive" alt="Mikolaj_zdjecie" />
           </PhotoWr>
           <AboutWr>
-            <h4>Kim jestem?</h4>
+            <h4>{t("me-sec-who")}</h4>
             <ul>
               <li>
-                Ponad <b>800</b> osób wzięło udział w moich szkoleniach, w tym
-                Ambasada USA z siedzibą w Warszawie, zespół Dyrektor Mary Kay
-                Polska
+                <p
+                  style={{ fontWeight: 400 }}
+                  dangerouslySetInnerHTML={{ __html: t("me-sec-inf-1") }}
+                />
               </li>
               <li>
-                Specjalizuję się w kampaniach Lead Generation oraz E-commerce
+                <p
+                  style={{ fontWeight: 400 }}
+                  dangerouslySetInnerHTML={{ __html: t("me-sec-inf-2") }}
+                />
               </li>
               <li>
-                {" "}
-                <b>2 000 000</b> wygenerowanej sprzedaży dla moich klientów
+                <p
+                  style={{ fontWeight: 400 }}
+                  dangerouslySetInnerHTML={{ __html: t("me-sec-inf-3") }}
+                />
               </li>
               <li>
-                {" "}
-                <b>74+</b> zadowolonych klientów
+                <p
+                  style={{ fontWeight: 400 }}
+                  dangerouslySetInnerHTML={{ __html: t("me-sec-inf-4") }}
+                />
               </li>
               <li>
-                Z ciekawostek - studiuję kierunek Multimedia Design w Kopenhadze
+                <p
+                  style={{ fontWeight: 400 }}
+                  dangerouslySetInnerHTML={{ __html: t("me-sec-inf-5") }}
+                />
               </li>
             </ul>
-            <p>Znajdziesz mnie w social mediach</p>
+            <p dangerouslySetInnerHTML={{ __html: t("me-sec-find-me") }} />
             <div className="social_icons">
               <div className="single_icon">
                 <Link href="https://www.instagram.com/mikolaj.ulikowski/">

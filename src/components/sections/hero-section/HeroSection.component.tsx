@@ -47,20 +47,10 @@ const HeroSection: FC<IHeroSection> = ({ meetingRef, pageContent }) => {
 
   const { handleScrollToSection } = UseScrollToSection();
 
-  console.log(t("button-book"));
-
   useEffect(() => {
     timeLine.current = gsap.timeline();
 
     timeLine.current
-      // .set([headline.current, buttonRef.current, imageRef.current],
-      // 	{autoAlpha:1})
-      // .fromTo(headline.current,
-      // 	{x: -100, autoAlpha: 0, ease: Power3.easeOut},
-      // 	{x: 0, autoAlpha: 1, duration: .8})
-      // .fromTo(buttonRef.current,
-      // 	{x: -100, autoAlpha: 0,},
-      // 	{x: 0, autoAlpha: 1, duration: .4})
       .fromTo(
         contentWrapperRef.current,
         { y: "+=50", autoAlpha: 0 },
@@ -71,9 +61,6 @@ const HeroSection: FC<IHeroSection> = ({ meetingRef, pageContent }) => {
         { y: "+=50", autoAlpha: 0 },
         { y: 0, autoAlpha: 1, duration: 0.8, delay: -0.5 }
       );
-    // .fromTo(subtitle.current,
-    // 	{x: -200, autoAlpha: 0, ease: Power3.easeInOut},
-    // 	{x: 0, autoAlpha: 1, duration: 1})
 
     return () => timeLine.current.kill();
   }, [timeLine]);
