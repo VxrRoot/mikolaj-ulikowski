@@ -29,6 +29,7 @@ import RowTemplate from "../../templates/RowTemplate";
 import SectionTitle from "../../elements/section-title/SectionTitle.component";
 import Circle from "../../elements/circle/Circle.component";
 import { useTranslation } from "react-i18next";
+import i18n from "../../../../i18n";
 
 interface IOpinionSection {
   allOpinions: allOpinionsType;
@@ -94,7 +95,11 @@ const OpinionSection = forwardRef(
                       />
                     </div>
                     <div className="slide_content">
-                      <p>{opinion.description}</p>
+                      <p>
+                        {i18n.language === "pl"
+                          ? opinion.description
+                          : opinion.descriptionEn}
+                      </p>
                       <div className="author">{opinion.author}</div>
                       {opinion.company ? (
                         <p className="company_content">{opinion.company}</p>

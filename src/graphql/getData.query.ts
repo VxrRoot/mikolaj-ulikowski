@@ -23,6 +23,7 @@ export const QUERY = `
         alt
         url
       }
+      descriptionEn
     }
 }
 `;
