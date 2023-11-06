@@ -1,7 +1,7 @@
- import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 interface IWrapper {
-	isMobile: boolean;
+  isMobile: boolean;
 }
 
 const animationBurger1 = keyframes`
@@ -11,7 +11,7 @@ const animationBurger1 = keyframes`
 	to {
 		background-color: transparent;
 	}
-`
+`;
 
 const animationBurger2 = keyframes`
 	50% {
@@ -23,7 +23,7 @@ const animationBurger2 = keyframes`
 		top: 0;
 		transform: rotate(45deg);
 	}
-`
+`;
 
 const animationBurger3 = keyframes`
 	50% {
@@ -38,104 +38,112 @@ const animationBurger3 = keyframes`
 `;
 
 export const Wrapper = styled.div<IWrapper>`
-	position: ${({isMobile}) => isMobile ? 'fixed' : 'absolute'};
-	left: 0;
-	top: 0;
-	width: 100%;
-	z-index: 100;
-	padding-bottom: 8px;
+  position: ${({ isMobile }) => (isMobile ? "fixed" : "absolute")};
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding-bottom: 8px;
 
-	@media(min-width: 1024px) {
-		padding-top: 12px;
-	}
+  @media (min-width: 1024px) {
+    padding-top: 12px;
+  }
 `;
 
 export const StyledHeader = styled.header`
-	padding: 16px 16px 0 16px;
-	display: flex;
-	width: 100%;
+  padding: 16px 16px 0 16px;
+  display: flex;
+  width: 100%;
 
-	@media(min-width: 1024px) {
-		padding-top: 8px;
-	}
-`
+  @media (min-width: 1024px) {
+    padding-top: 8px;
+  }
+`;
 
 export const LogoWrapper = styled.div`
-	margin-top: 6px;
-	cursor: pointer;
+  margin-top: 6px;
+  cursor: pointer;
 
-	svg {
-		width: auto;
-		height: 34px;
-		fill: ${({theme}) => theme.colorPeach};
-	}
+  svg {
+    width: auto;
+    height: 34px;
+    fill: ${({ theme }) => theme.colorPeach};
+  }
 
-	@media(min-width: 1024px) {
-		margin-top: 0;
+  @media (min-width: 1024px) {
+    margin-top: 0;
 
-		svg {
-			width: auto;
-			height: 40px;
-			fill: ${({theme}) => theme.colorPeach};
-		}
-	}
+    svg {
+      width: auto;
+      height: 40px;
+      fill: ${({ theme }) => theme.colorPeach};
+    }
+  }
 `;
 
 export const StyledBurger = styled.div`
-	position: relative;
-	width: 100%;
-	
-	.burger_wr {
-		z-index: 10;
-		display: flex;
-		position: absolute;
-		cursor: pointer;
-		right: 0;
-		top: 0;
-		width: 35px;
-		height: 40px;
-		
-		.burger {
-			position: absolute;
-			cursor: pointer;
-			width: 100%;
-			height: 3px;
-			background-color: white;
-			top: 50%;
-			transform: translateY(-50%);
-			
-			&:after,
-			&:before {
-				content: "";
-				position: absolute;
-				width: 100%;
-				height: 3px;
-				background-color: white;
-			}
-			
-			&:after {
-				top: 12px;
-			}
+  position: relative;
+  width: 100%;
 
-			&:before {
-				top: -12px;
-			}
-			
-			&.isActive {
-				animation: ${animationBurger1} .2s forwards;
-				
-				&:before {
-					animation: ${animationBurger2} .5s .2s forwards;
-				}
-				
-				&:after {
-					animation: ${animationBurger3} .5s .2s forwards;
-				}
-			}
-		}
+  .lang_wr {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 50px;
+  }
 
-		@media(min-width: 1024px) {
-			display: none;
-		}
-	}
+  .burger_wr {
+    z-index: 10;
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    width: 35px;
+    height: 40px;
+
+    .burger {
+      position: absolute;
+      cursor: pointer;
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+      }
+
+      &:after {
+        top: 12px;
+      }
+
+      &:before {
+        top: -12px;
+      }
+
+      &.isActive {
+        animation: ${animationBurger1} 0.2s forwards;
+
+        &:before {
+          animation: ${animationBurger2} 0.5s 0.2s forwards;
+        }
+
+        &:after {
+          animation: ${animationBurger3} 0.5s 0.2s forwards;
+        }
+      }
+    }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
 `;

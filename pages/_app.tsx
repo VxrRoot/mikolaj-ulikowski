@@ -6,9 +6,11 @@ import GlobalStyles from "../src/styles/GlobalStyles.styles";
 import { ThemeProvider } from "styled-components";
 import * as fbq from "../lib/fpixel";
 import { useRouter } from "next/router";
+import i18n from "../i18n";
 
 // Theme
 import { theme } from "../src/utility/theme/theme";
+import { I18nextProvider } from "react-i18next";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -47,7 +49,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         }}
       />
       <GlobalStyles />
-      <Component {...pageProps} />
+      <I18nextProvider i18n={i18n}>
+        <Component {...pageProps} />
+      </I18nextProvider>
     </ThemeProvider>
   );
 }
