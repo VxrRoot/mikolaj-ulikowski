@@ -1,24 +1,26 @@
 /** @type {import('next').NextConfig} */
-const withReactSvg = require('next-react-svg');
-const path = require('path');
+const withReactSvg = require("next-react-svg");
+const path = require("path");
 
 module.exports = withReactSvg({
   swcMinify: true,
   reactStrictMode: true,
   typescript: {
-    ignoreBuildErrors: false
+    ignoreBuildErrors: false,
   },
   output: {
-    globalObject: 'this'
+    globalObject: "this",
   },
-  include: path.resolve(__dirname, 'src/assets'),
+  include: path.resolve(__dirname, "src/assets"),
   compiler: {
-    styledComponents: true | {
-      ssr: true,
-      cssProp: true,
-    }
+    styledComponents:
+      true |
+      {
+        ssr: true,
+        cssProp: true,
+      },
   },
   images: {
-    domains: ['www.datocms-assets.com']
-  }
-})
+    domains: ["www.datocms-assets.com"],
+  },
+});

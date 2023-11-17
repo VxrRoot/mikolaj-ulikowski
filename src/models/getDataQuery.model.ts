@@ -27,12 +27,20 @@ export type allOpinionsType = {
   };
 }[];
 
+export type AllFaqItemsType = {
+  answearEn: string;
+  answearPl: string;
+  questionEn: string;
+  questionPl: string;
+}[];
+
 interface IGetQuery {
   data: {
     statistic: statisticType;
     pageContent: pageContentType;
     allSpecializations: allSpecializationsType;
     allOpinions: allOpinionsType;
+    allFaqItems: AllFaqItemsType;
   };
 }
 

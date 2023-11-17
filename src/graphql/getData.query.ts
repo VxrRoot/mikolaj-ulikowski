@@ -25,5 +25,11 @@ export const QUERY = `
       }
       descriptionEn
     }
+    allFaqItems {
+      questionEn
+      questionPl
+      answearEn
+      answearPl
+    }
 }
 `;

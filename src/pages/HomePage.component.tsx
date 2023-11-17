@@ -18,6 +18,7 @@ const HomePage: FC<ModelGetQuery> = ({ data }) => {
   const specializationsSectionRef = useRef<HTMLDivElement>(null!);
   const opinionSectionRef = useRef<HTMLDivElement>(null!);
   const meetingRef = useRef<HTMLDivElement>(null!);
+  console.log(data);
 
   return (
     <MainTemplate
@@ -38,7 +39,7 @@ const HomePage: FC<ModelGetQuery> = ({ data }) => {
       <OpinionSection ref={opinionSectionRef} allOpinions={data.allOpinions} />
       <AboutMe ref={meetingRef} />
       <BookConsultation />
-      <FAQSection />
+      <FAQSection faq={data.allFaqItems} />
     </MainTemplate>
   );
 };
