@@ -21,6 +21,7 @@ export type allOpinionsType = {
   id: string;
   description: string;
   descriptionEn: string;
+  // coverImage: any;
   img?: {
     url: string;
     alt: string;
