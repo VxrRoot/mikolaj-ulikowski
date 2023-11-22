@@ -21,10 +21,18 @@ export type allOpinionsType = {
   id: string;
   description: string;
   descriptionEn: string;
+  // coverImage: any;
   img?: {
     url: string;
     alt: string;
   };
+}[];
+
+export type AllFaqItemsType = {
+  answearEn: string;
+  answearPl: string;
+  questionEn: string;
+  questionPl: string;
 }[];
 
 interface IGetQuery {
@@ -33,6 +41,7 @@ interface IGetQuery {
     pageContent: pageContentType;
     allSpecializations: allSpecializationsType;
     allOpinions: allOpinionsType;
+    allFaqItems: AllFaqItemsType;
   };
 }
 

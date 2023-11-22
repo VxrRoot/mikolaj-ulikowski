@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { ForwardedRef, forwardRef, useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import { Image as DatoImage } from "react-datocms";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -86,11 +88,10 @@ const OpinionSection = forwardRef(
                 {allOpinions.map((opinion) => (
                   <SwiperSlide key={opinion.id} className="slide">
                     <div className="img_wr">
-                      <Image
-                        src={opinion.img?.url ? opinion.img.url : imageUser}
+                      <img
+                        src={opinion.img?.url ? opinion.img.url : ""}
                         alt={opinion.img?.url ? opinion.img.url : "author"}
-                        width={80}
-                        height={80}
+                        style={{ width: "80px", height: "80px" }}
                         className="img"
                       />
                     </div>
