@@ -16,6 +16,7 @@ import {
 // Models
 import { ModelMobileNav } from "./MobileNav.model";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 const MobileNav: FC<ModelMobileNav> = ({
   isOpen,
@@ -52,6 +53,9 @@ const MobileNav: FC<ModelMobileNav> = ({
             <span onClick={() => handleScrollToSection(contactRef)}>
               {t("nav-kontakt")}
             </span>
+          </li>
+          <li>
+            <Link href="/blog">{t("nav-blog")}</Link>
           </li>
         </ul>
       </StyledNav>

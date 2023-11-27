@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC, MutableRefObject } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -8,13 +10,14 @@ import UseScrollToSection from "../../../hooks/UseScrollToSection.hook";
 import { StyledNavigation } from "./DesktopNav.styles";
 
 interface IDesktopNav {
-  offerRef: MutableRefObject<HTMLDivElement>;
-  opinionRef: MutableRefObject<HTMLDivElement>;
-  contactRef: MutableRefObject<HTMLDivElement>;
+  offerRef?: MutableRefObject<HTMLDivElement>;
+  opinionRef?: MutableRefObject<HTMLDivElement>;
+  contactRef?: MutableRefObject<HTMLDivElement>;
 }
 
 const DesktopNav: FC<IDesktopNav> = ({ offerRef, opinionRef, contactRef }) => {
   const { t } = useTranslation();
+  const router = useRouter();
 
   const { handleScrollToSection } = UseScrollToSection();
 
@@ -25,19 +28,46 @@ const DesktopNav: FC<IDesktopNav> = ({ offerRef, opinionRef, contactRef }) => {
           <span style={{ whiteSpace: "nowrap" }}>{t("nav-home")}</span>
         </li>
         <li>
-          <span onClick={() => handleScrollToSection(offerRef)}>
+          <span
+            onClick={() => {
+              if (offerRef) {
+                handleScrollToSection(offerRef);
+              } else {
+                router.push("/");
+              }
+            }}
+          >
             {t("nav-oferta")}
           </span>
         </li>
         <li>
-          <span onClick={() => handleScrollToSection(opinionRef)}>
+          <span
+            onClick={() => {
+              if (opinionRef) {
+                handleScrollToSection(opinionRef);
+              } else {
+                router.push("/");
+              }
+            }}
+          >
             {t("nav-opinie")}
           </span>
         </li>
         <li>
-          <span onClick={() => handleScrollToSection(contactRef)}>
+          <span
+            onClick={() => {
+              if (contactRef) {
+                handleScrollToSection(contactRef);
+              } else {
+                router.push("/");
+              }
+            }}
+          >
             {t("nav-kontakt")}
           </span>
+        </li>
+        <li>
+          <Link href="/blog">{t("nav-blog")}</Link>
         </li>
       </ul>
     </StyledNavigation>
