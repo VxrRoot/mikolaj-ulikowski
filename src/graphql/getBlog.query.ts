@@ -34,43 +34,34 @@ query MyQuery {
     }
 `;
 
-export const BLOG_POST_QUERY = `query MyQuery($slug: String) {
-      blogpost(
-        filter: {slug: {eq: $slug}, title: {}}
-      ) {
-        id
-        author {
-          name
-        }
-        _allTitleLocales {
-          value
-        }
-        _allContentLocales {
-          value {
-            value
-            links
-            blocks {
-              __typename
-              ... on ImageRecord {
-                id
-                image { 
-                  responsiveImage {
-                    width
-                    webpSrcSet
-                    title
-                    srcSet
-                    src
-                    sizes
-                    height
-                    bgColor
-                    base64
-                    aspectRatio
-                    alt
-                  }
-                }
-              }
+export const BLOG_POST_QUERY = `query MyQuery {
+  blogpost(
+    filter: {title: {}, slug: {eq: "marketing-internetowy-klucz-do-sukcesu-w-erze-cyfrowej"}}
+  ) {
+    id
+    author {
+      name
+    }
+    _allTitleLocales {
+      value
+    }
+    _allContentLocales {
+      value {
+        value
+        links
+        blocks {
+          __typename
+          ... on VideoRecord {
+            id,
+            youtubeVideo {
+              url
+              height
+              width
+              providerUid
             }
           }
         }
       }
-    }`;
+    }
+  }
+}`;

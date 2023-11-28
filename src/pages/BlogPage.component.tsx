@@ -1,19 +1,16 @@
 import Link from "next/link";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 import RowTemplate from "../components/templates/RowTemplate";
 import { IBlogQuery } from "../models/getDataQuery.model";
 import {
   BlogPostsWrapper,
   StyledDiv,
   StyledParagraph,
-  StyledPostLink,
-  Subtitle,
   Title,
   Wrapper,
 } from "./BlogPage.styles";
-import Image from "next/image";
-import i18n from "../../i18n";
-import { useTranslation } from "react-i18next";
 
 const BlogPage: FC<IBlogQuery> = ({ data }) => {
   return (
@@ -39,8 +36,6 @@ const BlogPostPreview: FC<any> = (props) => {
   const { t } = useTranslation();
 
   const { data } = props;
-
-  console.log(data);
 
   return (
     <StyledDiv>

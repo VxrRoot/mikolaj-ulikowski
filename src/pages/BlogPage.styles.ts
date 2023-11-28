@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
-  padding-top: 124px;
+  padding: 124px 0;
   background: rgb(53, 45, 42);
   background: linear-gradient(
     0deg,
@@ -14,6 +14,10 @@ export const Wrapper = styled.main`
   p {
     max-width: 600px;
   }
+`;
+
+export const StyledArticle = styled.article`
+  width: 100%;
 `;
 
 export const BackLink = styled.main`

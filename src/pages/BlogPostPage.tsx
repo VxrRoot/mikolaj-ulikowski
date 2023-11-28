@@ -5,8 +5,9 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
 import RowTemplate from "../components/templates/RowTemplate";
 import { IBlogPost } from "../interfaces/interfaces";
-import { BackLink, Wrapper } from "./BlogPage.styles";
+import { BackLink, StyledArticle, Wrapper } from "./BlogPage.styles";
 import { IoIosArrowRoundBack } from "react-icons/io";
+import YouTube from "react-youtube";
 
 interface IBlogPostPage {
   post: IBlogPost;
@@ -14,9 +15,16 @@ interface IBlogPostPage {
 
 const BlogPostPage: FC<IBlogPostPage> = ({ post }) => {
   const { t } = useTranslation();
-  console.log(post);
 
   const plLang = i18n.language === "pl";
+
+  const opts = {
+    height: "315",
+    width: "560",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
 
   return (
     <Wrapper>
@@ -27,20 +35,25 @@ const BlogPostPage: FC<IBlogPostPage> = ({ post }) => {
             <span>Wróć</span>
           </BackLink>
         </Link>
-        <h1>{post.data.blogpost._allTitleLocales[plLang ? 0 : 1].value}</h1>
-        <StructuredText
-          data={post.data.blogpost._allContentLocales[plLang ? 0 : 1].value}
-          renderBlock={({ record }) => {
-            switch (record.__typename) {
-              case "VideoBlockRecord":
-                return <div>video</div>;
-              case "ImageRecord":
-                return <div>img</div>;
-              default:
-                return null;
-            }
-          }}
-        />
+        <h1>{post.data.blogpost._allTitleLocales[plLang ? 1 : 0].value}</h1>
+        <StyledArticle>
+          <StructuredText
+            data={post.data.blogpost._allContentLocales[plLang ? 1 : 0].value}
+            renderBlock={({ record }: any) => {
+              switch (record.__typename) {
+                case "VideoRecord":
+                  return (
+                    <YouTube
+                      videoId={record.youtubeVideo.providerUid}
+                      opts={opts}
+                    />
+                  );
+                default:
+                  return null;
+              }
+            }}
+          />
+        </StyledArticle>
       </RowTemplate>
     </Wrapper>
   );
