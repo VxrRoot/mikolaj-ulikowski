@@ -2,8 +2,8 @@ import { FC, MutableRefObject } from "react";
 import styled from "styled-components";
 
 // Components
-import Header from "../elements/header/Header.component";
 import Footer from "../elements/footer/Footer.component";
+import Header from "../elements/header/Header.component";
 
 interface IMainTemplate {
   children: JSX.Element | JSX.Element[];

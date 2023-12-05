@@ -2,22 +2,55 @@ import styled from "styled-components";
 
 export const Wrapper = styled.main`
   padding: 124px 0;
-  background: rgb(53, 45, 42);
-  background: linear-gradient(
-    0deg,
-    rgba(53, 45, 42, 1) 10%,
-    rgba(122, 117, 117, 1) 100%
-  );
+  background-color: #f8f8f8;
   min-height: 100vh;
-  color: white;
+  color: black;
+
+  .page__heading {
+    margin-left: 10px;
+  }
 
   p {
+    margin-left: 10px;
     max-width: 600px;
+  }
+`;
+
+export const StyledImageWrapper = styled.div`
+  height: 400px;
+  width: auto;
+  margin-bottom: 2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 `;
 
 export const StyledArticle = styled.article`
   width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+
+  p {
+    width: 100% !important;
+    margin: auto;
+    margin-bottom: 12px;
+    text-align: justify;
+
+    &:last-of-type {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (min-width: 720px) {
+    p {
+      min-width: 50rem;
+    }
+  }
 `;
 
 export const BackLink = styled.main`
@@ -82,12 +115,12 @@ export const StyledDiv = styled.div`
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   font-size: 24px;
   margin-bottom: 10px;
 `;
 
-export const Subtitle = styled.h2`
+export const Subtitle = styled.h3`
   font-size: 18px;
   margin-bottom: 10px;
 `;

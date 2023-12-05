@@ -16,7 +16,7 @@ const BlogPage: FC<IBlogQuery> = ({ data }) => {
   return (
     <Wrapper>
       <RowTemplate>
-        <h1>Blog o marketingu!</h1>
+        <h1 className="page__heading">Blog o marketingu!</h1>
         <p>
           Zapraszam do lektury, jeśli pragniesz być na bieżąco z informacjami
           dotyczącymi e-marketingu, planowania działań marketingowych online,

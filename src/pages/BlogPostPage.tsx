@@ -5,7 +5,12 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
 import RowTemplate from "../components/templates/RowTemplate";
 import { IBlogPost } from "../interfaces/interfaces";
-import { BackLink, StyledArticle, Wrapper } from "./BlogPage.styles";
+import {
+  BackLink,
+  StyledArticle,
+  StyledImageWrapper,
+  Wrapper,
+} from "./BlogPage.styles";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import YouTube from "react-youtube";
 
@@ -19,8 +24,8 @@ const BlogPostPage: FC<IBlogPostPage> = ({ post }) => {
   const plLang = i18n.language === "pl";
 
   const opts = {
-    height: "315",
-    width: "560",
+    height: "300px",
+    width: "100%",
     playerVars: {
       autoplay: 0,
     },
@@ -36,6 +41,9 @@ const BlogPostPage: FC<IBlogPostPage> = ({ post }) => {
           </BackLink>
         </Link>
         <h1>{post.data.blogpost._allTitleLocales[plLang ? 1 : 0].value}</h1>
+        <StyledImageWrapper>
+          <img src={post.data.blogpost.image.url} alt="alt img" />
+        </StyledImageWrapper>
         <StyledArticle>
           <StructuredText
             data={post.data.blogpost._allContentLocales[plLang ? 1 : 0].value}

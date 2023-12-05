@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 interface IWrapper {
   isMobile: boolean;
+  isBlack: boolean;
 }
 
 const animationBurger1 = keyframes`
@@ -44,9 +45,11 @@ export const Wrapper = styled.div<IWrapper>`
   width: 100%;
   z-index: 100;
   padding-bottom: 8px;
+  background-color: ${({ isBlack }) => (isBlack ? "black" : "transparent")};
 
   @media (min-width: 1024px) {
     padding-top: 12px;
+    padding-bottom: 18px;
   }
 `;
 

@@ -5,6 +5,7 @@ export interface IBlogPost {
       author: {
         name: string;
       };
+      image: any;
       _allContentLocales: any;
       _allTitleLocales: { value: string }[];
     };

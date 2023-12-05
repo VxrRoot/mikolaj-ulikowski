@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { FC } from "react";
 import i18n from "../../i18n";
 import MainTemplate from "../../src/components/templates/MainTemplate";

@@ -34,9 +34,9 @@ query MyQuery {
     }
 `;
 
-export const BLOG_POST_QUERY = `query MyQuery {
+export const BLOG_POST_QUERY = `query MyQuery($slug: String) {
   blogpost(
-    filter: {title: {}, slug: {eq: "marketing-internetowy-klucz-do-sukcesu-w-erze-cyfrowej"}}
+    filter: {title: {}, slug: {eq: $slug}}
   ) {
     id
     author {
@@ -62,6 +62,11 @@ export const BLOG_POST_QUERY = `query MyQuery {
           }
         }
       }
+    }
+    image {
+      alt
+      author
+      url
     }
   }
 }`;

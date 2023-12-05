@@ -17,6 +17,7 @@ import MobileNav from "../../navigation/mobile-nav/MobileNav.component";
 import RowTemplate from "../../templates/RowTemplate";
 import LangSwitch from "../LangSwitch/LangSwitch";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface IHeader {
   offerRef?: MutableRefObject<HTMLDivElement>;
@@ -27,12 +28,15 @@ interface IHeader {
 const Header: FC<IHeader> = ({ offerRef, opinionRef, contactRef }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  const router = useRouter();
+  const containsBlog = router.asPath.includes("/blog");
+
   const showMenu = () => {
     setShowMobileMenu((prev) => !prev);
   };
 
   return (
-    <Wrapper isMobile={showMobileMenu}>
+    <Wrapper isBlack={containsBlog} isMobile={showMobileMenu}>
       <RowTemplate>
         <StyledHeader>
           <LogoWrapper>
