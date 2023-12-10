@@ -40,7 +40,7 @@ const BlogPostPage: FC<IBlogPostPage> = ({ post }) => {
             <span>Wróć</span>
           </BackLink>
         </Link>
-        <h1>{post.data.blogpost._allTitleLocales[plLang ? 1 : 0].value}</h1>
+        <h1>{post.data.blogpost?._allTitleLocales[plLang ? 1 : 0].value}</h1>
         <StyledImageWrapper>
           <img src={post.data.blogpost.image.url} alt="alt img" />
         </StyledImageWrapper>

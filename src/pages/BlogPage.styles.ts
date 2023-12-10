@@ -34,6 +34,7 @@ export const StyledArticle = styled.article`
   max-width: 800px;
   margin: auto;
   position: relative;
+  padding: 0 16px;
 
   p {
     width: 100% !important;
@@ -47,8 +48,14 @@ export const StyledArticle = styled.article`
   }
 
   @media (min-width: 720px) {
+    ul,
+    ol {
+      padding: 0;
+    }
     p {
-      min-width: 50rem;
+      min-width: 45rem;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
 `;
@@ -100,32 +107,7 @@ export const StyledPostLink = styled.div`
   }
 `;
 
-export const StyledDiv = styled.div`
-  background-color: transparent;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 10px;
-  border: 1px solid ${({ theme }) => theme.colorPeach};
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-`;
-
-export const Title = styled.h2`
-  font-size: 24px;
-  margin-bottom: 10px;
-`;
-
 export const Subtitle = styled.h3`
   font-size: 18px;
-  margin-bottom: 10px;
-`;
-
-export const StyledParagraph = styled.p`
-  font-size: 14px;
   margin-bottom: 10px;
 `;

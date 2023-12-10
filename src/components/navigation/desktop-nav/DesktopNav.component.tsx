@@ -25,7 +25,14 @@ const DesktopNav: FC<IDesktopNav> = ({ offerRef, opinionRef, contactRef }) => {
     <StyledNavigation>
       <ul>
         <li>
-          <span style={{ whiteSpace: "nowrap" }}>{t("nav-home")}</span>
+          <span
+            onClick={() => {
+              router.push("/");
+            }}
+            style={{ whiteSpace: "nowrap" }}
+          >
+            {t("nav-home")}
+          </span>
         </li>
         <li>
           <span
