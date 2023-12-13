@@ -29,9 +29,9 @@ import RowTemplate from "../../templates/RowTemplate";
 import { useTranslation } from "react-i18next";
 
 interface IFooter {
-  offerRef: MutableRefObject<HTMLDivElement>;
-  opinionRef: MutableRefObject<HTMLDivElement>;
-  contactRef: MutableRefObject<HTMLDivElement>;
+  offerRef?: MutableRefObject<HTMLDivElement>;
+  opinionRef?: MutableRefObject<HTMLDivElement>;
+  contactRef?: MutableRefObject<HTMLDivElement>;
 }
 
 const Footer: FC<IFooter> = ({ contactRef, offerRef, opinionRef }) => {

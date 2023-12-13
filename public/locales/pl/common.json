@@ -3,7 +3,8 @@
   "nav-oferta": "Oferta",
   "nav-opinie": "Opinie",
   "nav-kontakt": "Kontakt",
-  "headline": "Hej! Tu Mikołaj Ulikowski, </br> specjalista od e-marketingu",
+  "nav-blog": "Blog",
+  "headline": "Hej, z tej strony Mikołaj! </br> specjalista od digital marketingu",
   "subtitle": "Od 2019 roku układam oraz egzekwuję strategie marketingowe dla firm z Polski, Europy i USA. Dobrej jakości leady, zwiększona sprzedaż w sklepie internetowym, czy budowanie społeczności to tylko kilka z rzeczy, </br> w których mogę pomóc i Tobie!",
   "button-book": "Umów się na rozmowę",
   "budzet": "Obsługiwany budżet",
@@ -31,5 +32,7 @@
   "footer-nav-p": "Nawigacja",
   "footer-contact-p": "Kontakt",
   "footer-copy": "&copy; 2023. Wszelkie prawa zastrzeżone mikolajulikowski.pl",
-  "footer-created-by": "Strona stworzona przez:"
+  "footer-created-by": "Strona stworzona przez:",
+  "blog-heading": "Marketing na Nowej Fali: Inspiracje, Trendy, Sukcesy!",
+  "blog-paragraph": "Zapraszam do lektury, jeśli pragniesz być na bieżąco z informacjami dotyczącymi e-marketingu, planowania działań marketingowych online, copywritingu, mediów społecznościowych i skuteczności biznesowej."
 }

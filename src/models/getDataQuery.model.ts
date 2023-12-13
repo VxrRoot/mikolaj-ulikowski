@@ -45,4 +45,8 @@ interface IGetQuery {
   };
 }
 
+export interface IBlogQuery {
+  data: any;
+}
+
 export type ModelGetQuery = IGetQuery;

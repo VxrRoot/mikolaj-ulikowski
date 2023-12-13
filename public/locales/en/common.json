@@ -2,6 +2,7 @@
   "nav-home": "Home",
   "nav-oferta": "Offer",
   "nav-opinie": "Opinions",
+  "nav-blog": "Blog",
   "nav-kontakt": "Contact",
   "headline": "Hey, this is Mikolaj Ulikowski,</br> an e-marketing specialist.",
   "subtitle": "Since 2019, I have been developing and executing marketing strategies for companies from Poland, Europe and the USA. Good quality leads, increased sales in the online store, or building a community are just a few of the things I can help you with!",
@@ -31,5 +32,7 @@
   "footer-nav-p": "Navigation",
   "footer-contact-p": "Contact",
   "footer-copy": "&copy; 2023. All rights reserved mikolajulikowski.pl",
-  "footer-created-by": "Site created by:"
+  "footer-created-by": "Site created by:",
+  "blog-heading": "Marketing on the New Wave: Inspirations, Trends, Successes!",
+  "blog-paragraph": "I invite you to read if you want to stay up to date on e-marketing, online marketing planning, copywriting, social media and business effectiveness."
 }

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FAQContainer = styled.div`
   max-width: 800px;
   margin: 60px auto;
+  margin-bottom: 120px;
 `;
 
 export const FAQItem = styled.div`

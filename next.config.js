@@ -23,12 +23,13 @@ module.exports = withReactSvg({
   images: {
     formats: ["image/png", "image/jpg"],
     domains: ["https:/www.datocms-assets.com/45505/**"],
-    // remotePatterns: [
-    //   {
-    //     protocol: "https",
-    //     hostname: "https:/www.datocms-assets.com",
-    //     pathname: "/45505/**",
-    //   },
-    // ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "https:/www.datocms-assets.com",
+        port: "",
+        pathname: "/45505/**",
+      },
+    ],
   },
 });

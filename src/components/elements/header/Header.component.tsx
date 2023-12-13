@@ -16,26 +16,33 @@ import DesktopNav from "../../navigation/desktop-nav/DesktopNav.component";
 import MobileNav from "../../navigation/mobile-nav/MobileNav.component";
 import RowTemplate from "../../templates/RowTemplate";
 import LangSwitch from "../LangSwitch/LangSwitch";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface IHeader {
-  offerRef: MutableRefObject<HTMLDivElement>;
-  opinionRef: MutableRefObject<HTMLDivElement>;
-  contactRef: MutableRefObject<HTMLDivElement>;
+  offerRef?: MutableRefObject<HTMLDivElement>;
+  opinionRef?: MutableRefObject<HTMLDivElement>;
+  contactRef?: MutableRefObject<HTMLDivElement>;
 }
 
 const Header: FC<IHeader> = ({ offerRef, opinionRef, contactRef }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const router = useRouter();
+  const containsBlog = router.asPath.includes("/blog");
 
   const showMenu = () => {
     setShowMobileMenu((prev) => !prev);
   };
 
   return (
-    <Wrapper isMobile={showMobileMenu}>
+    <Wrapper isBlack={containsBlog} isMobile={showMobileMenu}>
       <RowTemplate>
         <StyledHeader>
           <LogoWrapper>
-            <SvgLogo />
+            <Link href="/">
+              <SvgLogo />
+            </Link>
           </LogoWrapper>
           <DesktopNav
             offerRef={offerRef}
