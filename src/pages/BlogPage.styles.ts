@@ -36,11 +36,15 @@ export const StyledArticle = styled.article`
   position: relative;
   padding: 0 16px;
 
+  ol {
+    padding-left: 16px;
+  }
+
   p {
     width: 100% !important;
     margin: auto;
     margin-bottom: 12px;
-    text-align: justify;
+    /* text-align: justify; */
 
     &:last-of-type {
       margin-bottom: 50px;
@@ -51,6 +55,7 @@ export const StyledArticle = styled.article`
     ul,
     ol {
       padding: 0;
+      padding-left: 16px;
     }
     p {
       min-width: 45rem;
