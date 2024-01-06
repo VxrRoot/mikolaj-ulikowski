@@ -12,7 +12,7 @@ const BlogPage: FC<IBlogQuery> = ({ data }) => {
     <Wrapper>
       <RowTemplate>
         <h1 className="page__heading">{t("blog-heading")}</h1>
-        <p>{t("blog-paragraph")}</p>
+        <p className="page_paragraph">{t("blog-paragraph")}</p>
         <BlogPostsWrapper>
           {data.allBlogposts.map((p: any) => (
             <BlogPostPreview key={p.id} data={p} />

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const StyledLangButton = styled.button`
+interface ISwitch {
+  isBlack: boolean;
+}
+
+export const StyledLangButton = styled.button<ISwitch>`
   cursor: pointer;
   display: flex;
   gap: 6px;
@@ -10,9 +14,13 @@ export const StyledLangButton = styled.button`
   align-items: center;
   background-color: transparent;
   border: none;
-  color: white;
+  /* color: white; */
+  color: black;
+  color: ${({ isBlack }) => (isBlack ? "black" : "white")};
 
   svg {
-    fill: #ffffff !important;
+    /* fill: #ffffff !important; */
+    /* fill: black !important; */
+    fill: ${({ isBlack }) => (isBlack ? "black" : "white")};
   }
 `;

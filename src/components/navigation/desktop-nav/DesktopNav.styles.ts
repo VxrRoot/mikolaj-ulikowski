@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const StyledNavigation = styled.nav`
+interface INav {
+  isBlack: boolean;
+}
+
+export const StyledNavigation = styled.nav<INav>`
   display: none;
 
   @media (min-width: 1024px) {
@@ -27,7 +31,7 @@ export const StyledNavigation = styled.nav`
           position: relative;
           cursor: pointer;
           overflow-y: hidden;
-          color: white;
+          color: ${({ isBlack }) => (isBlack ? "black" : "white")};
 
           &:before {
             content: "";

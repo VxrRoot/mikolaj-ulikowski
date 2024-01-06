@@ -39,7 +39,7 @@ const Header: FC<IHeader> = ({ offerRef, opinionRef, contactRef }) => {
     <Wrapper isBlack={containsBlog} isMobile={showMobileMenu}>
       <RowTemplate>
         <StyledHeader>
-          <LogoWrapper>
+          <LogoWrapper isBlack={containsBlog}>
             <Link href="/">
               <SvgLogo />
             </Link>
@@ -49,7 +49,7 @@ const Header: FC<IHeader> = ({ offerRef, opinionRef, contactRef }) => {
             opinionRef={opinionRef}
             contactRef={contactRef}
           />
-          <StyledBurger>
+          <StyledBurger isBlack={containsBlog} isOpen={showMobileMenu}>
             <div className="lang_wr">
               <LangSwitch />
             </div>

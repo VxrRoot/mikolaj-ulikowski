@@ -8,6 +8,7 @@ import { IBlogPost } from "../interfaces/interfaces";
 import {
   BackLink,
   StyledArticle,
+  StyledImageContentWrapper,
   StyledImageWrapper,
   Wrapper,
 } from "./BlogPage.styles";
@@ -55,6 +56,12 @@ const BlogPostPage: FC<IBlogPostPage> = ({ post }) => {
                       videoId={record.youtubeVideo.providerUid}
                       opts={opts}
                     />
+                  );
+                case "ImageRecord":
+                  return (
+                    <StyledImageContentWrapper>
+                      <img src={record.image.url} alt={record.image.alt} />
+                    </StyledImageContentWrapper>
                   );
                 default:
                   return null;

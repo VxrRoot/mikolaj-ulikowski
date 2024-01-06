@@ -19,10 +19,12 @@ const DesktopNav: FC<IDesktopNav> = ({ offerRef, opinionRef, contactRef }) => {
   const { t } = useTranslation();
   const router = useRouter();
 
+  const containsBlog = router.asPath.includes("/blog");
+
   const { handleScrollToSection } = UseScrollToSection();
 
   return (
-    <StyledNavigation>
+    <StyledNavigation isBlack={containsBlog}>
       <ul>
         <li>
           <span
