@@ -60,6 +60,10 @@ export const BLOG_POST_QUERY = `query MyQuery($slug: String) {
               providerUid
             }
           }
+          ... on ImageRecord {
+            id
+            image {url alt}
+          }
         }
       }
     }

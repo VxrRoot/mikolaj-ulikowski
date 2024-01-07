@@ -10,17 +10,17 @@ const BlogPostPreview: FC<any> = (props) => {
   const { data } = props;
 
   return (
-    <StyledDiv>
-      <img src={data.image.url} alt="blog post image" />
-      <Title>
-        <Link href={`/blog/${data.slug}`}>
+    <Link href={`/blog/${data.slug}`}>
+      <StyledDiv>
+        <img src={data.image.url} alt="blog post image" />
+        <Title>
           <a>{data._allTitleLocales[i18n.language === "pl" ? 1 : 0].value}</a>
-        </Link>
-      </Title>
-      <StyledParagraph>
-        {data.publishDate} {data.author.name}
-      </StyledParagraph>
-    </StyledDiv>
+        </Title>
+        <StyledParagraph>
+          {data.publishDate} {data.author.name}
+        </StyledParagraph>
+      </StyledDiv>
+    </Link>
   );
 };
 

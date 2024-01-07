@@ -1,9 +1,17 @@
 import styled from "styled-components";
 
+export const StyledSection = styled.section`
+  position: relative;
+  background-color: ${({ theme }) => theme.colorWhite};
+  padding: 50px 0;
+`;
+
 export const FAQContainer = styled.div`
+  position: relative;
   max-width: 800px;
   margin: 60px auto;
   margin-bottom: 120px;
+  z-index: 100 !important;
 `;
 
 export const FAQItem = styled.div`
@@ -11,6 +19,7 @@ export const FAQItem = styled.div`
   border-radius: 8px;
   margin-bottom: 10px;
   cursor: pointer;
+  background-color: white;
   overflow: hidden; /* Zapobiega "wyciekowi" treści po zamknięciu */
 `;
 
@@ -38,4 +47,42 @@ export const Answer = styled.div<{ expanded: boolean }>`
   overflow: hidden;
   transition: 0.3s;
   padding: 10px;
+`;
+
+export const StyledCircle1 = styled.div`
+  z-index: 0;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 12%;
+  left: 60px;
+
+  @media (min-width: 650px) {
+    top: 30%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 200px;
+    height: 200px;
+    top: 45%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 300px;
+    height: 300px;
+  }
+`;
+
+export const StyledCircle2 = styled.div`
+  display: none;
+  z-index: 0;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  right: 10%;
+
+  @media (min-width: 750px) {
+    display: block;
+  }
 `;

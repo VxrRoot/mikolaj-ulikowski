@@ -8,11 +8,18 @@ export const Wrapper = styled.main`
 
   .page__heading {
     margin-left: 10px;
+    text-align: center;
+  }
+
+  .page_paragraph {
+    text-align: center;
   }
 
   p {
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    margin: 0 auto 20px auto;
     max-width: 600px;
+    /* text-align: center; */
   }
 `;
 
@@ -21,6 +28,15 @@ export const StyledImageWrapper = styled.div`
   width: auto;
   margin-bottom: 2rem;
 
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+`;
+
+export const StyledImageContentWrapper = styled.div`
   img {
     width: 100%;
     height: 100%;

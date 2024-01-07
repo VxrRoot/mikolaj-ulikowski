@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledDiv = styled.div`
   background-color: transparent;
+  cursor: pointer;
   padding: 20px;
   border-radius: 10px;
   margin: 10px;
