@@ -56,6 +56,16 @@ export const StyledArticle = styled.article`
     padding-left: 16px;
   }
 
+  ul {
+    padding-left: 20px;
+    li {
+      p {
+        padding: 0;
+        margin-bottom: 12px !important;
+      }
+    }
+  }
+
   p {
     width: 100% !important;
     margin: auto;
