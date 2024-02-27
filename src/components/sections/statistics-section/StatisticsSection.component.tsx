@@ -55,7 +55,7 @@ const StatisticsSection: FC<IStatisticsSection> = ({
     useEasing: true,
   });
   const { start: startROI } = useCountUp({
-    end: roi,
+    end: Number(`${roi} %`),
     start: 0.0,
     ref: "ROI_number",
     duration: 1.3,
@@ -135,7 +135,7 @@ const StatisticsSection: FC<IStatisticsSection> = ({
               <StyledButton>{t("budzet")}</StyledButton>
             </div>
             <div className="single_number">
-              <p id="ROI_number">0.0</p> <span>%</span>
+              <p id="ROI_number">0.0</p>
               <StyledButton>{t("roi")}</StyledButton>
             </div>
           </StyledNumbersCounterWr>
