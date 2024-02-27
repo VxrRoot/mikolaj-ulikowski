@@ -37,6 +37,7 @@ const StatisticsSection: FC<IStatisticsSection> = ({
   roi,
 }) => {
   const { t } = useTranslation();
+  console.log(roi);
 
   const { start: startClients } = useCountUp({
     end: clients,
@@ -55,12 +56,12 @@ const StatisticsSection: FC<IStatisticsSection> = ({
     useEasing: true,
   });
   const { start: startROI } = useCountUp({
-    end: Number(`${roi} %`),
-    start: 0.0,
+    end: roi,
+    start: 0,
     ref: "ROI_number",
     duration: 1.3,
     startOnMount: false,
-    // decimals: 1,
+    decimals: 1,
     useEasing: true,
   });
 
@@ -135,7 +136,9 @@ const StatisticsSection: FC<IStatisticsSection> = ({
               <StyledButton>{t("budzet")}</StyledButton>
             </div>
             <div className="single_number">
-              <p id="ROI_number">0.0</p>
+              <span>
+                <p id="ROI_number">0</p> <p>%</p>
+              </span>
               <StyledButton>{t("roi")}</StyledButton>
             </div>
           </StyledNumbersCounterWr>
