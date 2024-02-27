@@ -60,7 +60,7 @@ const StatisticsSection: FC<IStatisticsSection> = ({
     ref: "ROI_number",
     duration: 1.3,
     startOnMount: false,
-    decimals: 1,
+    // decimals: 1,
     useEasing: true,
   });
 
@@ -135,7 +135,7 @@ const StatisticsSection: FC<IStatisticsSection> = ({
               <StyledButton>{t("budzet")}</StyledButton>
             </div>
             <div className="single_number">
-              <p id="ROI_number">0.0</p>
+              <p id="ROI_number">0.0</p> <span>%</span>
               <StyledButton>{t("roi")}</StyledButton>
             </div>
           </StyledNumbersCounterWr>
