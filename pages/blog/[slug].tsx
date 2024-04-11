@@ -1,4 +1,7 @@
+import { useRouter } from "next/router";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 import MainTemplate from "../../src/components/templates/MainTemplate";
 import {
   BLOG_POST_QUERY,
@@ -6,10 +9,45 @@ import {
 } from "../../src/graphql/getBlog.query";
 import { request } from "../../src/lib/datocms";
 import BlogPostPage from "../../src/pages/BlogPostPage";
+import { PageSeo } from "../../src/utility/seo/PageSeo.component";
 
 const BlogPost = (props: any) => {
+  const { t } = useTranslation();
+
+  const plLang = i18n.language === "pl";
+
+  const blogPostTitle =
+    props.data.blogpost?._allTitleLocales[plLang ? 1 : 0].value;
+
+  const blogPostExcerpt =
+    props.data.blogpost?._allExcerptLocales[plLang ? 1 : 0].value;
+
   return (
     <MainTemplate>
+      <PageSeo
+        page={{
+          cannonicalUrl: `https://mikolajulikowski.pl/blog/${props.data.blogpost.slug}`,
+          nofollow: false,
+          noindex: false,
+          og: {
+            description: blogPostExcerpt,
+            title: "",
+            images: [
+              {
+                url: props.data.blogpost.image.url,
+                alt: "",
+                height: 630,
+                type: "image/jpeg",
+                width: 1200,
+              },
+            ],
+          },
+          meta: {
+            title: blogPostTitle,
+            description: blogPostExcerpt,
+          },
+        }}
+      />
       <BlogPostPage post={props} />
     </MainTemplate>
   );

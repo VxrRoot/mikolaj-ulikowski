@@ -37,7 +37,6 @@ const StatisticsSection: FC<IStatisticsSection> = ({
   roi,
 }) => {
   const { t } = useTranslation();
-  console.log(roi);
 
   const { start: startClients } = useCountUp({
     end: clients,

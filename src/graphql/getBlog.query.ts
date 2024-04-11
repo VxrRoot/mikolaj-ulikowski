@@ -42,6 +42,9 @@ export const BLOG_POST_QUERY = `query MyQuery($slug: String) {
     author {
       name
     }
+    _allExcerptLocales {
+      value
+    }
     _allTitleLocales {
       value
     }
