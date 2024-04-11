@@ -35,7 +35,7 @@ const BlogPost = (props: any) => {
             images: [
               {
                 url: props.data.blogpost.image.url,
-                alt: "",
+                alt: "Zdjęcie posta blogowego",
                 height: 630,
                 type: "image/jpeg",
                 width: 1200,
