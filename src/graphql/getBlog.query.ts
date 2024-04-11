@@ -39,6 +39,7 @@ export const BLOG_POST_QUERY = `query MyQuery($slug: String) {
     filter: {title: {}, slug: {eq: $slug}}
   ) {
     id
+    slug
     author {
       name
     }
