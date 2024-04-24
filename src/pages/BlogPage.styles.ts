@@ -37,9 +37,14 @@ export const StyledImageWrapper = styled.div`
 `;
 
 export const StyledImageContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
   img {
-    width: 100%;
-    height: 100%;
+    max-width: 26rem;
+    height: auto;
+    /* width: 100%;
+    height: 100%; */
     object-fit: cover;
     object-position: center;
   }

@@ -22,7 +22,10 @@ module.exports = withReactSvg({
   },
   images: {
     formats: ["image/png", "image/jpg"],
-    domains: ["https:/www.datocms-assets.com/45505/**"],
+    domains: [
+      "https:/www.datocms-assets.com/45505/**",
+      "www.datocms-assets.com",
+    ],
     remotePatterns: [
       {
         protocol: "https",
